@@ -1,13 +1,60 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f5f7fb;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  /*font-family: "Poppins", "Public Sans", sans-serif;*/
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-primary-white: rgba(255, 255, 255);
+  --color-primary-white-light: rgba(255, 255, 255, 0.85);
+  --color-primary-dark: #2a2a2a;
+  --color-primary-grey: #444444;
+  --color-primary-light-grey: rgba(117, 117, 117, 0.226);
+
+  /*--color-primary: #55c57a;
+  --color-primary-light: #7269ef;
+  --color-primary-dark: #28b485;
+
+  --color-grey-light-1: #878a92;
+  --color-grey-light-2: #e6ebf5;
+  --color-grey-light-3: #f5f7fb;
+
+  --color-grey-dark: #495057;
+  --color-grey-dark-3: #343a40;
+  --color-grey-dark-2: #7a7f9a;
+  --color-grey-dark-4: #212529;
+
+  --color-grey-purple: #f5f7fb;
+  --color-grey-purple-2: #c2cee6;
+
+  --color-white: #fff;
+  --color-white-2: #f0eff5;
+  --color-black: #000;
+
+  --color-red-pink: #ef476f;
+  --color-red-pink-light: rgba(239, 71, 111, 0.18);
+
+  --color-online: #06d6a0;
+  --color-away: #ffd166;
+
+  --defult-font-size: 1.6rem;
+
+  --grid-width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-horizental: 6rem;*/
 }
