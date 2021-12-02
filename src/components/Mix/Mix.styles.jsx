@@ -14,6 +14,36 @@ export const Hamburger = styled.div`
       }
     }
   }
+
+  ${({ isActive }) =>
+    isActive &&
+    `position: relative;
+    span{
+      &:first-child{
+        position:absolute;
+        right:-0.1rem;
+        top: -0.6rem;
+        width:1.5rem;
+        transform: rotate(45deg);
+
+      }
+      &:last-child{
+        position:absolute;
+        right:-0.1rem;
+        top:0.6rem;
+        width:1.5rem;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+    span {
+      &:last-child {
+        width: 1.5rem;
+      }
+    }
+  }
+  `}
 `;
 
 export const Line = styled.span`

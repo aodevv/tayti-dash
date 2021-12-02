@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { IoSearchSharp } from "react-icons/io5";
 
@@ -13,9 +13,15 @@ import {
 import { Hamburger, Line } from "../Mix/Mix.styles";
 
 const Header = () => {
+  const [burger, setBurger] = useState(false);
+  const toggleBurger = () => {
+    setBurger(!burger);
+    console.log("clicked");
+    console.log(burger);
+  };
   return (
     <HContainer>
-      <Hamburger>
+      <Hamburger onClick={toggleBurger} isActive={burger}>
         <Line />
         <Line />
         <Line />

@@ -4,7 +4,7 @@ export const HContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 0 4rem;
-  height: 12rem;
+  height: 10rem;
   background-color: var(--color-primary-dark);
   color: var(--color-primary-white);
 `;

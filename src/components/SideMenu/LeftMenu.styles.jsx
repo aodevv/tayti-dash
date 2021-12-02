@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const LMContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 33rem;
+  width: 30rem;
   height: 100%;
   background-color: var(--color-primary-dark);
 `;
 
 export const LogoContainer = styled.div`
   width: 100%;
-  height: 12rem;
+  height: 10rem;
   display: flex;
   background-color: white;
   align-items: center;
