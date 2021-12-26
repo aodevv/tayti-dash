@@ -43,6 +43,10 @@ export const GlobalStyles = createGlobalStyle`
 .u-px-1 {
   padding: 0 1.6rem !important;
 }
+
+.u-pt-l{
+  padding-top: 4rem !important;
+}
 .list-unstyled {
   list-style: none !important;
 }
@@ -68,5 +72,33 @@ export const GlobalStyles = createGlobalStyle`
 .text-muted{
   font-size: 1.5rem;
   color: var(--color-grey-dark-2);
+}
+
+.text-center{
+  text-align: center;
+}
+
+.fw-bold{
+  font-weight: 500;
+}
+
+.fs-s{
+  font-size: 1rem;
+}
+
+.fs-xs{
+  font-size: 1rem;
+}
+.fs-s{
+  font-size: 1.2rem;
+}
+.fs-m{
+  font-size: 1.6rem;
+}
+.fs-l{
+  font-size: 2rem;
+}
+.fs-xl{
+  font-size: 2.4rem;
 }
 `;

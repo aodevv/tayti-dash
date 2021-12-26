@@ -17,7 +17,7 @@ export const LogoContainer = styled.div`
   justify-content: center;
   img {
     width: 60%;
-    filter: grayscale(100%);
+    //filter: grayscale(100%);
   }
 `;
 

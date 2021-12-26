@@ -18,6 +18,7 @@ export const Hamburger = styled.div`
   ${({ isActive }) =>
     isActive &&
     `position: relative;
+    
     span{
       &:first-child{
         position:absolute;
@@ -88,7 +89,6 @@ export const CardButton = styled.div`
   padding: 2rem 1rem;
   border-radius: 1rem;
   //background-color: #dbdbdbb0;
-  border: solid 1px black;
   cursor: pointer;
   font-size: 1.5rem;
   min-width: 16.5rem;
@@ -98,7 +98,15 @@ export const CardButton = styled.div`
   p {
     text-align: center;
   }
-  &:hover {
-    background-color: #d1d1d184;
+  transition: background-color 0.2s linear;
+
+  ${({ bc }) =>
+    bc &&
+    `
+    background-color: var(${bc}-light);
+    color: var(${bc});
+    &:hover {
+    background-color: var(${bc}-lighter);
   }
+  `}
 `;

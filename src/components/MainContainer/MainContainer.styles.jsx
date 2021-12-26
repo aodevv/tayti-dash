@@ -4,6 +4,23 @@ export const CenterContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 4rem 4rem 0 4rem;
+  position: relative;
+`;
+
+export const AvatarContainer = styled.div`
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: #f5f7fb;
+  border: solid 2rem #f5f7fb;
+  border-radius: 50%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -28,7 +45,7 @@ export const InfoContent = styled.div`
 export const DoubleCard = styled.div`
   display: flex;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 400;
   align-items: flex-start;
   & > div {
     padding: 1rem 0;
@@ -36,15 +53,6 @@ export const DoubleCard = styled.div`
       margin-right: 1rem;
     }
     &:last-child {
-      div {
-        &:not(:first-child) {
-          font-weight: 400;
-        }
-        &:first-child {
-          font-size: 2.4rem;
-        }
-      }
-
       margin-left: 1rem;
     }
   }

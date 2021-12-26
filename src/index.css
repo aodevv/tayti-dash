@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
@@ -25,6 +26,22 @@ body {
   --color-primary-dark: #2a2a2a;
   --color-primary-grey: #444444;
   --color-primary-light-grey: rgba(117, 117, 117, 0.226);
+
+  --color-blue-light: #4772d523;
+  --color-blue-lighter: rgba(71, 114, 213, 0.267);
+  --color-blue: #3d6ad6;
+
+  --color-bluegreen-light: rgba(14, 121, 179, 0.15);
+  --color-bluegreen-lighter: rgba(14, 121, 179, 0.25);
+  --color-bluegreen: #0073b7;
+
+  --color-red-light: rgba(251, 14, 14, 0.15);
+  --color-red-lighter: rgba(251, 14, 14, 0.25);
+  --color-red: #fa5757;
+
+  --color-yellow-light: #ff8c0026;
+  --color-yellow-lighter: #ff8c0040;
+  --color-yellow: #ff8c00;
 
   /*--color-primary: #55c57a;
   --color-primary-light: #7269ef;
