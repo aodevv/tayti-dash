@@ -31,20 +31,9 @@ const MainContainer = () => {
               <img src={Avatar} alt="avatar" />
             </AvatarContainer>
             <div className="card-header">
-              <h2 className="text-center">Identification de la session</h2>
+              <h2 className="text-center">John Doe</h2>
+              <p className="text-center">Administrateur</p>
             </div>
-            <InfoContainer>
-              <InfoLabel>Nom</InfoLabel>
-              <InfoContent>John</InfoContent>
-            </InfoContainer>
-            <InfoContainer>
-              <InfoLabel>Prenom</InfoLabel>
-              <InfoContent>Doe</InfoContent>
-            </InfoContainer>
-            <InfoContainer>
-              <InfoLabel>Titre</InfoLabel>
-              <InfoContent>Titre</InfoContent>
-            </InfoContainer>
           </Card>
           <CBContainer>
             <CardButton bc="--color-blue">

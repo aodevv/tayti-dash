@@ -29,7 +29,9 @@ body {
 
   --color-blue-light: #4772d523;
   --color-blue-lighter: rgba(71, 114, 213, 0.267);
-  --color-blue: #3d6ad6;
+  /*--color-blue: #3d6ad6;*/
+  --color-blue: #00247e;
+  --color-blue-darker: #001853;
 
   --color-bluegreen-light: rgba(14, 121, 179, 0.15);
   --color-bluegreen-lighter: rgba(14, 121, 179, 0.25);

@@ -110,3 +110,25 @@ export const CardButton = styled.div`
   }
   `}
 `;
+
+export const Button1 = styled.button`
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--color-blue);
+  color: white;
+  cursor: pointer;
+  transition: 100ms linear;
+
+  &:hover {
+    background-color: var(--color-blue-darker);
+  }
+
+  a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: white;
+  }
+`;

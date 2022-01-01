@@ -24,10 +24,12 @@ export const AvatarContainer = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   font-size: 1.6rem;
-  margin: 0 0 1rem 2rem;
+  margin: 0 0 1rem 1rem;
+  border: solid 1px red;
+  border-radius: 1.5rem;
 `;
 
 export const InfoLabel = styled.div`
@@ -38,8 +40,6 @@ export const InfoLabel = styled.div`
 export const InfoContent = styled.div`
   padding: 0.6rem 1.5rem;
   display: inline-block;
-  background-color: var(--color-primary-light-grey);
-  border-radius: 1.5rem;
 `;
 
 export const DoubleCard = styled.div`

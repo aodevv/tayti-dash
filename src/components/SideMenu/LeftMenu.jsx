@@ -14,6 +14,8 @@ import {
   MenuOption,
 } from "./LeftMenu.styles";
 
+import { Link } from "react-router-dom";
+
 const LeftMenu = () => {
   return (
     <div>
@@ -23,7 +25,7 @@ const LeftMenu = () => {
         </LogoContainer>
         <MenuOptions>
           <MenuOption>
-            <a href="javascript:void(0)">
+            <Link to="/gestion-dossier">
               <i>
                 <IoFolderSharp />
               </i>
@@ -31,7 +33,7 @@ const LeftMenu = () => {
               <i>
                 <IoChevronForward />
               </i>
-            </a>
+            </Link>
           </MenuOption>
           <MenuOption>
             <a href="javascript:void(0)">

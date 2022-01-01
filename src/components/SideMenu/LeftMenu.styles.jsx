@@ -25,6 +25,7 @@ export const MenuOptions = styled.ul`
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
+  padding-left: 1rem;
 `;
 
 export const MenuOption = styled.li`
