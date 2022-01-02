@@ -42,3 +42,8 @@ export const MontantGrid = styled.div`
     grid-column-start: span 2;
   }
 `;
+
+export const InfoCompGrid = styled.div`
+  width: 100%;
+  display: flex;
+`;

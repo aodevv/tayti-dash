@@ -16,11 +16,6 @@ export const StepLabelContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  background: linear-gradient(
-    90deg,
-    rgba(30, 30, 162, 0) 0%,
-    rgba(214, 214, 214, 0.6979166666666667) 100%
-  );
   padding: 2rem 4rem 2rem 0;
   & > h2 {
     margin-right: 2rem;
@@ -28,6 +23,26 @@ export const StepLabelContainer = styled.div`
     font-weight: 400;
   }
   border-right: 2px solid black;
+
+  ${({ finished }) =>
+    finished &&
+    `
+    background: linear-gradient(
+    90deg,
+    rgba(30, 30, 162, 0) 0%,
+    rgba(214, 214, 214, 0.6979166666666667) 100%
+  );
+
+  & > div:last-child{
+    background-color: darkgray;
+  border: 2px solid black;
+  }
+
+  & > h2 {
+    font-weight: bold;
+  }
+  
+  `}
 `;
 
 export const StepCircle = styled.div`
@@ -45,7 +60,7 @@ export const StepPoint = styled.div`
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: darkgray;
+  background-color: white;
   border: 2px solid black;
   top: 50%;
   right: 0;

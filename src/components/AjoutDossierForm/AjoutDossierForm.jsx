@@ -68,16 +68,19 @@ export default class AjoutDossierForm extends Component {
       partfonc,
     };
     return (
-      <DossierFormContainer>
-        <StepMonitor step={step} />
-        <CurrentStep
-          step={step}
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
-          values={values}
-        />
-      </DossierFormContainer>
+      <div>
+        <h1 className="u-mb-s">Formulaire d'ajout dossier</h1>
+        <DossierFormContainer>
+          <StepMonitor step={step} />
+          <CurrentStep
+            step={step}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        </DossierFormContainer>
+      </div>
     );
   }
 }

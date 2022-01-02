@@ -10,7 +10,7 @@ const topLabel = css`
   font-weight: bold;
 `;
 
-export const InputGroup = styled.div`
+const sharedCss = css`
   position: relative;
   margin: 1.4rem;
   label {
@@ -22,20 +22,36 @@ export const InputGroup = styled.div`
     z-index: -1;
     transition: all 50ms linear;
   }
-  input {
-    padding: 1.2rem 2rem;
-    border: 2px solid black;
-    border-radius: 1rem;
-    background-color: transparent;
-    width: 100%;
-    font-size: 1.8rem;
-    &:focus + label {
-      ${topLabel}
-    }
-  }
   &.focused {
     label {
       ${topLabel}
     }
+  }
+`;
+
+const sharedInputStyle = css`
+  padding: 1.2rem 2rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-color: transparent;
+  font-size: 1.8rem;
+  &:focus + label {
+    ${topLabel}
+  }
+`;
+
+export const InputGroup = styled.div`
+  ${sharedCss}
+  input {
+    ${sharedInputStyle}
+    width: 100%;
+    height: 5rem;
+  }
+`;
+
+export const TextAreaGroup = styled.div`
+  ${sharedCss}
+  textarea {
+    ${sharedInputStyle}
   }
 `;

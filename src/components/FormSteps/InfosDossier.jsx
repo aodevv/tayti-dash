@@ -7,11 +7,15 @@ import {
   InputsContainer,
   FormContainer,
   StepBtnGroup,
+  InfoCompGrid,
 } from "./FormSteps.Styles";
 
 import LabeledInput from "../FormElements/LabeledInput";
 
 import { StepBtn } from "../FormElements/Buttons";
+import { InputGroup } from "../FormElements/LabeledInput.styles";
+
+import LabeledTextArea from "../FormElements/LabeledTextArea";
 
 const InfosDossier = ({ nextStep, handleChange, values }) => {
   const Continue = (e) => {
@@ -20,30 +24,33 @@ const InfosDossier = ({ nextStep, handleChange, values }) => {
   };
   return (
     <div>
-      <h1 className="u-mb-s">Ajout Dossier</h1>
+      <h1 className="u-mb-s">Informations de bases</h1>
       <form action="">
         <FormContainer>
           <InputsContainer>
             <InputsGroup>
-              <h2>Infos dossier:</h2>
+              <h2>Identification:</h2>
               <InfoGrid>
                 <LabeledInput
-                  id={values.numdos}
+                  id="numdos"
                   type="text"
                   label="Numéro Dossier"
                   inputValue={values.numdos}
+                  handleChange={handleChange("numdos")}
                 />
                 <LabeledInput
-                  id={values.datev}
-                  type="text"
+                  id="datev"
+                  type="date"
                   label="Date évenement"
                   inputValue={values.datev}
+                  handleChange={handleChange("datev")}
                 />
                 <LabeledInput
-                  id={values.datouv}
-                  type="text"
+                  id="datouv"
+                  type="date"
                   label="Date d'ouverture"
                   inputValue={values.datouv}
+                  handleChange={handleChange("datouv")}
                 />
               </InfoGrid>
             </InputsGroup>
@@ -51,24 +58,68 @@ const InfosDossier = ({ nextStep, handleChange, values }) => {
               <h2>Montans:</h2>
               <MontantGrid>
                 <LabeledInput
-                  id={values.mrec}
-                  type="text"
+                  id="mtrec"
+                  type="number"
                   label="Montant réclamé"
-                  inputValue={values.mrec}
+                  inputValue={values.mtrec}
+                  handleChange={handleChange("mtrec")}
                 />
                 <LabeledInput
-                  id={values.maut}
-                  type="text"
+                  id="mtaut"
+                  type="number"
                   label="Montant autorisé"
-                  inputValue={values.maut}
+                  inputValue={values.mtaut}
+                  handleChange={handleChange("mtaut")}
                 />
                 <LabeledInput
-                  id={values.mvers}
-                  type="text"
+                  id="mtvers"
+                  type="number"
                   label="Montant Versé"
-                  inputValue={values.mvers}
+                  inputValue={values.mtvers}
+                  handleChange={handleChange("mtvers")}
                 />
               </MontantGrid>
+            </InputsGroup>
+          </InputsContainer>
+          <InputsContainer>
+            <InputsGroup>
+              <h2>Desciption de l'évenement</h2>
+              <LabeledTextArea
+                id="evn"
+                label="Déscription"
+                inputValue={values.evn}
+                handleChange={handleChange("evn")}
+                rows={5}
+                cols={50}
+              />
+            </InputsGroup>
+          </InputsContainer>
+          <InputsContainer>
+            <InputsGroup>
+              <h2>Infos complementaire:</h2>
+              <InfoCompGrid>
+                <LabeledInput
+                  id="actof"
+                  type="text"
+                  label="Acte officiel"
+                  inputValue={values.actof}
+                  handleChange={handleChange("actof")}
+                />
+                <LabeledInput
+                  id="program"
+                  type="text"
+                  label="Programme"
+                  inputValue={values.program}
+                  handleChange={handleChange("program")}
+                />
+                <LabeledInput
+                  id="partfonc"
+                  type="text"
+                  label="Participation foncière"
+                  inputValue={values.partfonc}
+                  handleChange={handleChange("partfonc")}
+                />
+              </InfoCompGrid>
             </InputsGroup>
           </InputsContainer>
           <StepBtnGroup>
@@ -77,12 +128,8 @@ const InfosDossier = ({ nextStep, handleChange, values }) => {
             </StepBtn>
           </StepBtnGroup>
         </FormContainer>
-        {/* <LabeledInput id="acteoff" type="text" label="Acte officiel" />
-        <LabeledInput id="status" type="text" label="Status" />
-        <LabeledInput id="ev" type="text" label="Evénement" />
-        <LabeledInput id="adms" type="text" label="Admissibilité" />
-        <LabeledInput id="pgm" type="text" label="Programme" />
-        <LabeledInput id="pf" type="text" label="Participation foncière" /> */}
+        {/* <LabeledInput id="adms" type="text" label="Admissibilité" />
+        <LabeledInput id="status" type="text" label="Status" /> */}
       </form>
     </div>
   );
