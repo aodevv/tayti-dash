@@ -1,13 +1,18 @@
 import React, { useMemo } from "react";
+
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+import { selectDossiers } from "../../redux/DossierInfos/infosDossier.selectors";
+
 import { useTable } from "react-table";
 import { COLUMNS } from "./ColumnsDossier";
-import DATA from "../../assets/dossiers.json";
 
 import "./TableDossier.scss";
 
-const TableDossier = () => {
+const TableDossier = ({ dossiers }) => {
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => DATA, []);
+  const data = dossiers;
 
   const tableInstance = useTable({
     columns,
@@ -43,4 +48,8 @@ const TableDossier = () => {
   );
 };
 
-export default TableDossier;
+const mapStateToProps = createStructuredSelector({
+  dossiers: selectDossiers,
+});
+
+export default connect(mapStateToProps)(TableDossier);

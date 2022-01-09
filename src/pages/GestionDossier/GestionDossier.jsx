@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
+import AjoutDossierModal from "../../components/Modals/AjoutDossierModal";
 import TableDossier from "../../components/TableDossier/TableDossier";
-import { Button1 } from "../../components/Mix/Mix.styles";
-
-import { Link } from "react-router-dom";
+import { ButtonM } from "../../components/Mix/Mix.styles";
 
 import "./GestionDossier.scss";
 
-const GestionDossier = () => {
+const GestionDossier = ({}) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="gs-container">
-      <Button1>
-        <Link to="/ajout-dossier">Ajouter Dossier</Link>
-      </Button1>
+      <ButtonM onClick={() => setShowModal(true)}>Ajouter Dossier</ButtonM>
+      <AjoutDossierModal showModal={showModal} setShowModal={setShowModal} />
       <TableDossier />
     </div>
   );

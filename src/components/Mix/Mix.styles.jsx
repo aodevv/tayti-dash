@@ -111,7 +111,7 @@ export const CardButton = styled.div`
   `}
 `;
 
-export const Button1 = styled.button`
+export const ButtonM = styled.button`
   margin-bottom: 1rem;
   font-size: 1.6rem;
   border-radius: 5px;
@@ -120,15 +120,9 @@ export const Button1 = styled.button`
   color: white;
   cursor: pointer;
   transition: 100ms linear;
+  padding: 1rem 2rem;
 
   &:hover {
     background-color: var(--color-blue-darker);
-  }
-
-  a {
-    display: inline-block;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    color: white;
   }
 `;
