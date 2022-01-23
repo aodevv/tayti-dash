@@ -1,4 +1,6 @@
 import React, { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { useTable } from "react-table";
 
 import { DossierColumns } from "./Columns";
@@ -14,6 +16,12 @@ const DMTable = () => {
     columns,
     data,
   });
+
+  const history = useNavigate();
+  const handleRowClick = (row) => {
+    history(`/${row.original.link}`);
+  };
+
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
   return (
@@ -31,7 +39,7 @@ const DMTable = () => {
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr {...row.getRowProps()} onClick={() => handleRowClick(row)}>
               {row.cells.map((cell) => {
                 return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}

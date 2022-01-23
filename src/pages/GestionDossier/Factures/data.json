@@ -1,0 +1,16 @@
+[
+  {
+    "id": "123",
+    "desc_fact": "Facture 1",
+    "date_fact": "1/11/2021",
+    "site_con": "Casablanca",
+    "tax": false
+  },
+  {
+    "id": "121",
+    "desc_fact": "Facture 2",
+    "date_fact": "9/30/2021",
+    "site_con": "Rabat",
+    "tax": true
+  }
+]

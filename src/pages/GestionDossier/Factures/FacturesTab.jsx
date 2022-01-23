@@ -1,20 +1,13 @@
 import React, { useMemo } from "react";
 import { useTable } from "react-table";
-import { useNavigate } from "react-router-dom";
 
-import { DossierColumns } from "./Columns";
+import { FacturesColumns } from "./Columns";
 
-import DATA from "../../assets/MI_DATA.json";
+import DATA from "./data.json";
 
-const MITable = () => {
-  const columns = useMemo(() => DossierColumns, []);
+const FacturesTab = () => {
+  const columns = useMemo(() => FacturesColumns, []);
   const data = useMemo(() => DATA, []);
-
-  const history = useNavigate();
-  const handleRowClick = (row) => {
-    history(`/${row.original.link}`);
-  };
-
   const tableInstance = useTable({
     columns,
     data,
@@ -36,7 +29,7 @@ const MITable = () => {
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} onClick={() => handleRowClick(row)}>
+            <tr {...row.getRowProps()}>
               {row.cells.map((cell) => {
                 return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}
@@ -48,4 +41,4 @@ const MITable = () => {
   );
 };
 
-export default MITable;
+export default FacturesTab;

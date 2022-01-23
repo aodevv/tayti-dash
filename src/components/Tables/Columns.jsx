@@ -1,5 +1,9 @@
 export const DossierColumns = [
   {
+    Header: "",
+    accessor: "id",
+  },
+  {
     Header: "Montant réclamé",
     accessor: "mr",
   },
