@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
+import { selectFactures } from "../../../redux/Factures/Factures.selectors";
+
 import { useParams } from "react-router-dom";
 
 import { FacturesContainer } from "./Factures.styles";
@@ -9,7 +13,7 @@ import { ButtonM } from "../../Mix/Mix.styles";
 
 import FacturesTab from "./FacturesTab";
 
-const Factures = ({ type }) => {
+const Factures = ({ type, factures }) => {
   const [showModal, setShowModal] = useState(false);
   const params = useParams();
   const types = {
@@ -24,9 +28,13 @@ const Factures = ({ type }) => {
       </h1>
       <ButtonM onClick={() => setShowModal(true)}>Ajouter Dossier</ButtonM>
       <AjoutFactureModal showModal={showModal} setShowModal={setShowModal} />
-      <FacturesTab />
+      <FacturesTab factures={factures[type.toUpperCase()][params.dossierId]} />
     </FacturesContainer>
   );
 };
 
-export default Factures;
+const mapStateToProps = createStructuredSelector({
+  factures: selectFactures,
+});
+
+export default connect(mapStateToProps)(Factures);

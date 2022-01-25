@@ -9,9 +9,9 @@ import { MdModeEdit } from "react-icons/md";
 
 import DATA from "./data.json";
 
-const FacturesTab = () => {
+const FacturesTab = ({ factures }) => {
   const columns = useMemo(() => FacturesColumns, []);
-  const data = useMemo(() => DATA, []);
+  const data = useMemo(() => factures, []);
   const tableInstance = useTable({
     columns,
     data,
