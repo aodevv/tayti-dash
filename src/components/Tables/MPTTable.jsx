@@ -12,7 +12,7 @@ const MPTTable = () => {
 
   const history = useNavigate();
   const handleRowClick = (row) => {
-    history(`/${row.original.link}`);
+    history(`${window.location.pathname}/${row.original.link}`);
   };
 
   const tableInstance = useTable({
@@ -22,7 +22,7 @@ const MPTTable = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
   return (
-    <table {...getTableProps()}>
+    <table {...getTableProps()} className="row_highlight">
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>

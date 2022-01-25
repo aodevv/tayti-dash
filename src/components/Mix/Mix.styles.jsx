@@ -126,3 +126,25 @@ export const ButtonM = styled.button`
     background-color: var(--color-blue-darker);
   }
 `;
+
+export const ButtonS = styled.button`
+  font-size: 2rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary-grey);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(122, 122, 122, 0.19931722689075626) 100%
+  );
+  cursor: pointer;
+  transition: 100ms linear;
+  padding: 0.6rem 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 6px 10px 2px #00000037;
+    transform: translateY(-2px);
+  }
+`;

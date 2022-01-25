@@ -6,9 +6,14 @@ import Homepage from "../../pages/homepage/Homepage";
 import GestionDossier from "../../pages/GestionDossier/GestionDossier";
 import AjoutDossier from "../../pages/GestionDossier/AjoutDossier";
 import DossierDetails from "../../pages/GestionDossier/DossierDetails";
-import Factures from "../../pages/GestionDossier/Factures/Factures";
-import Machinerie from "../../pages/GestionDossier/Machinerie/Machinerie";
-import Salaires from "../../pages/GestionDossier/Salaires/Salaires";
+
+import DABPage from "../../pages/GestionDossier/DABPage";
+import MPTPage from "../../pages/GestionDossier/MPTPage";
+import MIPage from "../../pages/GestionDossier/MIPage";
+
+import Factures from "../Tables/Factures/Factures";
+import Machinerie from "../Tables/Machineries/Machinerie";
+import Salaires from "../Tables/Salaires/Salaires";
 
 const RightContent = ({ match }) => {
   return (
@@ -19,12 +24,21 @@ const RightContent = ({ match }) => {
         <Route path="/gestion-dossier" element={<GestionDossier />} />
         <Route path="/ajout-dossier" element={<AjoutDossier />} />
         <Route path="/dossier/:dossierId" element={<DossierDetails />} />
-        <Route path={`/:type/factures/:dossierId`} element={<Factures />} />
-        <Route
-          path={`/:type/machineries/:dossierId`}
-          element={<Machinerie />}
-        />
-        <Route path={`/:type/salaires/:dossierId`} element={<Salaires />} />
+        <Route path="/dossier/:dossierId/dab/" element={<DABPage />}>
+          <Route path="factures" element={<Factures type="dab" />} />
+          <Route path="machineries" element={<Machinerie type="dab" />} />
+          <Route path="salaires" element={<Salaires type="dab" />} />
+        </Route>
+        <Route path="/dossier/:dossierId/mpt/" element={<MPTPage />}>
+          <Route path="factures" element={<Factures type="mpt" />} />
+          <Route path="machineries" element={<Machinerie type="mpt" />} />
+          <Route path="salaires" element={<Salaires type="mpt" />} />
+        </Route>
+        <Route path="/dossier/:dossierId/MI/" element={<MIPage />}>
+          <Route path="factures" element={<Factures type="mi" />} />
+          <Route path="machineries" element={<Machinerie type="mi" />} />
+          <Route path="salaires" element={<Salaires type="mi" />} />
+        </Route>
       </Routes>
     </RightContainer>
   );

@@ -7,7 +7,7 @@ import { selectDossiers } from "../../redux/DossierInfos/infosDossier.selectors"
 import { addInfosDossier } from "../../redux/DossierInfos/infosDossier.actions";
 
 import {
-  Baackground,
+  Background,
   AjoutModalContainer,
   ModalCloseBtn,
 } from "./Modals.styles";
@@ -85,7 +85,7 @@ const AjoutDossierModal = ({
   return (
     <>
       {showModal ? (
-        <Baackground ref={modalRef} onClick={closeModal}>
+        <Background ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <AjoutModalContainer showModal={showModal}>
               <ModalCloseBtn onClick={() => setShowModal(false)} />
@@ -170,7 +170,7 @@ const AjoutDossierModal = ({
               </div>
             </AjoutModalContainer>
           </animated.div>
-        </Baackground>
+        </Background>
       ) : null}
     </>
   );

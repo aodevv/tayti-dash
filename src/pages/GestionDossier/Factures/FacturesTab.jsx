@@ -3,6 +3,10 @@ import { useTable } from "react-table";
 
 import { FacturesColumns } from "./Columns";
 
+import { ButtonS } from "../../../components/Mix/Mix.styles";
+
+import { MdModeEdit } from "react-icons/md";
+
 import DATA from "./data.json";
 
 const FacturesTab = () => {
@@ -15,7 +19,7 @@ const FacturesTab = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
   return (
-    <table {...getTableProps()}>
+    <table {...getTableProps()} className="has_edit">
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -33,6 +37,11 @@ const FacturesTab = () => {
               {row.cells.map((cell) => {
                 return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}
+              <td>
+                <ButtonS>
+                  <MdModeEdit />
+                </ButtonS>
+              </td>
             </tr>
           );
         })}

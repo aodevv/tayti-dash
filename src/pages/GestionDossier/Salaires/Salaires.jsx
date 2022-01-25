@@ -2,7 +2,7 @@ import React from "react";
 
 import { useParams } from "react-router-dom";
 
-import "../DossierDetails.scss";
+import "../../DossierDetails.scss";
 
 const Salaires = () => {
   const params = useParams();

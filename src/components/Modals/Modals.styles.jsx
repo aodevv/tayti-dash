@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 
-export const Baackground = styled.div`
+export const Background = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -33,4 +33,21 @@ export const ModalCloseBtn = styled(MdClose)`
   height: 3.2rem;
   padding: 0;
   z-index: 10;
+`;
+
+export const Checkbox = styled.div`
+  margin: 1.4rem;
+  margin-left: 2rem;
+  label {
+    color: black;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+
+    input {
+      margin-left: 2rem;
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
 `;

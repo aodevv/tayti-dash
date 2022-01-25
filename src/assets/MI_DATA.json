@@ -5,7 +5,7 @@
     "mad": "$6575.14",
     "mat": "$7870.02",
     "mv": "$3822.95",
-    "link": "mi/factures/123"
+    "link": "mi/factures"
   },
   {
     "id": "Machinerie",
@@ -13,7 +13,7 @@
     "mad": "$1132.77",
     "mat": "$4536.22",
     "mv": "$7654.51",
-    "link": "mi/machineries/123"
+    "link": "mi/machineries"
   },
   {
     "id": "Salaires",
@@ -21,6 +21,6 @@
     "mad": "$2256.27",
     "mat": "$6878.52",
     "mv": "$4931.43",
-    "link": "mi/salaires/123"
+    "link": "mi/salaires"
   }
 ]

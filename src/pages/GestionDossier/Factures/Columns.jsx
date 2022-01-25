@@ -16,6 +16,10 @@ export const FacturesColumns = [
     accessor: "site_con",
   },
   {
+    Header: "Montant réclamé avant tax",
+    accessor: "montant_rec",
+  },
+  {
     Header: "Taxable",
     accessor: "tax",
   },
