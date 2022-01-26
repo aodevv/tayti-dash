@@ -36,10 +36,12 @@ export const ModalCloseBtn = styled(MdClose)`
 `;
 
 export const Checkbox = styled.div`
-  margin: 1.4rem;
+  display: inline-block;
+  margin-bottom: 1.4rem;
   margin-left: 2rem;
   label {
     color: black;
+    font-weight: bold;
     font-size: 2rem;
     display: flex;
     align-items: center;

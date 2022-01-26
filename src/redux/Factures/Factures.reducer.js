@@ -10,10 +10,20 @@ const INITIAL_STATE = {
 
 const facturesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "ADD_FACTURE":
+    case "ADD_FACTURE_DAB":
       return {
         ...state,
-        factures: action.payload,
+        DAB: action.payload,
+      };
+    case "ADD_FACTURE_MPT":
+      return {
+        ...state,
+        MPT: action.payload,
+      };
+    case "ADD_FACTURE_MI":
+      return {
+        ...state,
+        MI: action.payload,
       };
     default:
       return state;

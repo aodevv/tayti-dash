@@ -7,17 +7,21 @@ import { ButtonS } from "../../../components/Mix/Mix.styles";
 
 import { MdModeEdit } from "react-icons/md";
 
-import DATA from "./data.json";
-
-const FacturesTab = ({ factures }) => {
+const FacturesTab = ({ factures, setIsEdit, setFactToEdit, setShowModal }) => {
   const columns = useMemo(() => FacturesColumns, []);
-  const data = useMemo(() => factures, []);
+  const data = factures;
   const tableInstance = useTable({
     columns,
     data,
   });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
+
+  const handleClick = (row) => {
+    setIsEdit(true);
+    setShowModal(true);
+    setFactToEdit(row.original);
+  };
   return (
     <table {...getTableProps()} className="has_edit">
       <thead>
@@ -38,7 +42,7 @@ const FacturesTab = ({ factures }) => {
                 return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}
               <td>
-                <ButtonS>
+                <ButtonS onClick={() => handleClick(row)}>
                   <MdModeEdit />
                 </ButtonS>
               </td>

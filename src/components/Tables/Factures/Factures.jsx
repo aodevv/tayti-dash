@@ -15,7 +15,11 @@ import FacturesTab from "./FacturesTab";
 
 const Factures = ({ type, factures }) => {
   const [showModal, setShowModal] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
+  const [factToEdit, setFactToEdit] = useState(null);
   const params = useParams();
+  const facturesDossier = factures[type.toUpperCase()][params.dossierId];
+  const facturesAll = factures[type.toUpperCase()];
   const types = {
     dab: "Dommages au biens",
     mpt: "Mesures préventifs temporaires",
@@ -26,9 +30,23 @@ const Factures = ({ type, factures }) => {
       <h1>
         Factures {types[type]}, Dossier : {params.dossierId}
       </h1>
-      <ButtonM onClick={() => setShowModal(true)}>Ajouter Dossier</ButtonM>
-      <AjoutFactureModal showModal={showModal} setShowModal={setShowModal} />
-      <FacturesTab factures={factures[type.toUpperCase()][params.dossierId]} />
+      <ButtonM onClick={() => setShowModal(true)}>Ajouter Facture</ButtonM>
+      <AjoutFactureModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        factures={facturesAll}
+        dossier={params.dossierId}
+        type={type}
+        isEdit={isEdit}
+        setIsEdit={setIsEdit}
+        factToEdit={factToEdit}
+      />
+      <FacturesTab
+        setIsEdit={setIsEdit}
+        setFactToEdit={setFactToEdit}
+        factures={facturesDossier}
+        setShowModal={setShowModal}
+      />
     </FacturesContainer>
   );
 };

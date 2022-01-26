@@ -6,7 +6,11 @@ const topLabel = css`
   left: 1rem;
   z-index: 1;
   padding: 0rem 0.2rem;
-  background-color: #f5f7fb;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(214, 214, 214, 0) 60%
+  );
   font-weight: bold;
 `;
 
@@ -35,6 +39,7 @@ const sharedInputStyle = css`
   border-radius: 1rem;
   background-color: transparent;
   font-size: 1.8rem;
+
   &:focus + label {
     ${topLabel}
   }
@@ -46,6 +51,10 @@ export const InputGroup = styled.div`
     ${sharedInputStyle}
     width: 100%;
     height: 5rem;
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #e3e3e3;
+    }
   }
 `;
 
