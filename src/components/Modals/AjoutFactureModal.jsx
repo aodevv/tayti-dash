@@ -72,8 +72,7 @@ const AjoutFactureModal = ({
 
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
-      setShowModal(false);
-      setIsEdit(false);
+      reset();
     }
   };
 
@@ -126,16 +125,16 @@ const AjoutFactureModal = ({
       default:
         break;
     }
-    setShowModal(false);
-    clearStates();
+    reset();
   };
 
   const handleCheck = (e) => {
     setTax(e.target.checked);
   };
 
-  const handleClose = (e) => {
+  const reset = () => {
     setShowModal(false);
+    clearStates();
     setIsEdit(false);
   };
   return (
@@ -144,7 +143,7 @@ const AjoutFactureModal = ({
         <Background ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <AjoutModalContainer showModal={showModal}>
-              <ModalCloseBtn onClick={() => handleClose()} />
+              <ModalCloseBtn onClick={reset} />
               <div>
                 <h1 className="u-mb-s">
                   {isEdit ? "Modifier facture" : "Nouvelle facture"}
@@ -168,7 +167,7 @@ const AjoutFactureModal = ({
                           inputValue={factDesc}
                           handleChange={(e) => setFactDesc(e.target.value)}
                           rows={5}
-                          cols={50}
+                          cols={61}
                         />
                         <LabeledInput
                           id="factDate"

@@ -8,7 +8,7 @@ import facturesReducer from "./Factures/Factures.reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [],
+  whitelist: ["factures", "dossiers"],
 };
 
 const rootReducer = combineReducers({

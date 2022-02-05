@@ -6,7 +6,9 @@ export const FormGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
 `;
 
-export const InputsGroup = styled.div``;
+export const InputsGroup = styled.div`
+  width: 70rem;
+`;
 
 export const InputsContainer = styled.div`
   display: flex;

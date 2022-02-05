@@ -62,7 +62,7 @@ const AjoutDossierModal = ({
 
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
-      setShowModal(false);
+      reset();
     }
   };
 
@@ -90,6 +90,10 @@ const AjoutDossierModal = ({
       Participation: "",
     };
     addInfosDossier([...dossiers, newDos]);
+    reset();
+  };
+
+  const reset = () => {
     setShowModal(false);
     clearStates();
   };
@@ -100,7 +104,7 @@ const AjoutDossierModal = ({
         <Background ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <AjoutModalContainer showModal={showModal}>
-              <ModalCloseBtn onClick={() => setShowModal(false)} />
+              <ModalCloseBtn onClick={reset} />
               <div>
                 <h1 className="u-mb-s">Nouveau dossier</h1>
                 <form onSubmit={handleSubmit}>
