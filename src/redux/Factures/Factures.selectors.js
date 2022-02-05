@@ -6,3 +6,13 @@ export const selectDABFactures = createSelector(
   [selectFactures],
   (factures) => factures.DAB
 );
+
+export const selectMPTFactures = createSelector(
+  [selectFactures],
+  (factures) => factures.MPT
+);
+
+export const selectMIFactures = createSelector(
+  [selectFactures],
+  (factures) => factures.MI
+);

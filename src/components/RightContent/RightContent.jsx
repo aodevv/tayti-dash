@@ -15,12 +15,15 @@ import Factures from "../Tables/Factures/Factures";
 import Machinerie from "../Tables/Machineries/Machinerie";
 import Salaires from "../Tables/Salaires/Salaires";
 
+import AjoutDossierForm from "../AjoutDossierForm/AjoutDossierForm";
+
 const RightContent = ({ match }) => {
   return (
     <RightContainer>
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/test" element={<AjoutDossierForm />} />
         <Route path="/gestion-dossier" element={<GestionDossier />} />
         <Route path="/ajout-dossier" element={<AjoutDossier />} />
         <Route path="/dossier/:dossierId" element={<DossierDetails />} />

@@ -36,6 +36,7 @@ const AjoutFactureModal = ({
   isEdit,
   setIsEdit,
   factToEdit,
+  setFactures,
 }) => {
   const [factRef, setFactRef] = useState("");
   const [factDesc, setFactDesc] = useState("");
@@ -95,12 +96,19 @@ const AjoutFactureModal = ({
       montant_rec: mr,
       tax: tax,
     };
-    const newFacts = [...factures[dossier], factToAdd];
-    Object.keys(factures).map(function (key, index) {
-      if (key === dossier) {
-        factures[key] = newFacts;
-      }
-    });
+    let newFacts;
+    if (type !== "new") {
+      newFacts = [...factures[dossier], factToAdd];
+      Object.keys(factures).map(function (key, index) {
+        if (key === dossier) {
+          factures[key] = newFacts;
+        }
+      });
+    } else {
+      newFacts = [...factures, factToAdd];
+      console.log(newFacts);
+    }
+
     switch (type) {
       case "dab":
         console.log("hereee");
@@ -111,6 +119,9 @@ const AjoutFactureModal = ({
         break;
       case "mi":
         addFactureMI(factures);
+        break;
+      case "new":
+        setFactures(newFacts);
         break;
       default:
         break;

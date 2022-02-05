@@ -13,6 +13,7 @@ const DMDossier = ({ prevStep, nextStep, handleChange, values }) => {
     e.preventDefault();
     prevStep();
   };
+
   return (
     <div>
       Step 2

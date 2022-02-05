@@ -18,9 +18,11 @@ export const FormContainer = styled.div`
 `;
 
 export const StepBtnGroup = styled.div`
+  margin-top: 1rem;
   padding: 0 1.4rem;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
 `;
 
 export const InfoGrid = styled.div`
@@ -47,3 +49,5 @@ export const InfoCompGrid = styled.div`
   width: 100%;
   display: flex;
 `;
+
+export const StepTables = styled.div``;

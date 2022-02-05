@@ -22,6 +22,12 @@ export const AjoutModalContainer = styled.div`
   position: relative;
   z-index: 10;
   border-radius: 1rem;
+  ${({ large }) =>
+    large &&
+    `
+    width: 120rem;
+    min-height: 65rem;
+  `}
 `;
 
 export const ModalCloseBtn = styled(MdClose)`
@@ -52,4 +58,10 @@ export const Checkbox = styled.div`
       height: 2.2rem;
     }
   }
+`;
+
+export const ModalSteps = styled.div``;
+export const ModalStepMonitor = styled.div``;
+export const SplitModals = styled.div`
+  display: flex;
 `;

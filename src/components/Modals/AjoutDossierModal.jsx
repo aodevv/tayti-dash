@@ -31,6 +31,8 @@ const AjoutDossierModal = ({
   dossiers,
   addInfosDossier,
 }) => {
+  const [step, setStep] = useState(1);
+
   const [numDos, setNumDos] = useState("");
   const [evDate, setEvDate] = useState("");
   const [opDate, setOpDate] = useState("");
@@ -38,6 +40,16 @@ const AjoutDossierModal = ({
   const [actof, setActOf] = useState("");
   const [prog, setProg] = useState("");
   const [partFonc, setPartFonc] = useState("");
+
+  // go back to previous step
+  const prevStep = () => {
+    setStep(step - 1);
+  };
+
+  // proceed to the next step
+  const nextStep = () => {
+    setStep(step + 1);
+  };
 
   const modalRef = useRef();
   const animation = useSpring({
