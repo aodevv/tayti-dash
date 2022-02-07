@@ -1,0 +1,31 @@
+[
+    {
+      "name": "Said",
+      "status": "status 1",
+      "date_per": "1/11/2021",
+      "montant_rec": 2460,
+      "Hreg":12,
+      "Hsup":20,
+      "Treg":25,
+      "Tsup":33,
+      "taux_vac": 0.25,
+      "ae":true,
+      "rrq": false,
+      "rqap":true
+    },
+    {
+        "name": "Karim",
+        "status": "status 2",
+        "date_per": "1/11/2021",
+        "montant_rec": 9830,
+        "Hreg":86,
+        "Hsup":41,
+        "Treg":10,
+        "Tsup":12,
+        "taux_vac": 0.25,
+        "ae":true,
+        "rrq": true,
+        "rqap":true
+      }
+  ]
+  

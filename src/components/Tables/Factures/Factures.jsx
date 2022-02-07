@@ -31,6 +31,7 @@ const Factures = ({ type, factures }) => {
         Factures {types[type]}, Dossier : {params.dossierId}
       </h1>
       <ButtonM onClick={() => setShowModal(true)}>Ajouter Facture</ButtonM>
+
       <AjoutFactureModal
         showModal={showModal}
         setShowModal={setShowModal}

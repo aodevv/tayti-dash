@@ -2,6 +2,8 @@ import React from "react";
 
 import { useParams } from "react-router-dom";
 
+import SalairesTab from "./SalairesTab";
+
 import "../DossierDetails.scss";
 
 const Salaires = () => {
@@ -16,6 +18,7 @@ const Salaires = () => {
       <h1>
         Salaires {types[params.type]}, Dossier : {params.dossierId}
       </h1>
+      <SalairesTab />
     </div>
   );
 };
