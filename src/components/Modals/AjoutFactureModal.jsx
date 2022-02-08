@@ -42,7 +42,7 @@ const AjoutFactureModal = ({
   const [factDesc, setFactDesc] = useState("");
   const [factDate, setFactDate] = useState("");
   const [siteConc, setSiteConc] = useState("");
-  const [mr, setMr] = useState("");
+  const [mr, setMr] = useState(0);
   const [tax, setTax] = useState(false);
 
   const modalRef = useRef();
@@ -81,7 +81,7 @@ const AjoutFactureModal = ({
     setFactDesc("");
     setFactDate("");
     setSiteConc("");
-    setMr("");
+    setMr(0);
     setTax(false);
   };
 
@@ -92,7 +92,7 @@ const AjoutFactureModal = ({
       desc_fact: factDesc,
       date_fact: factDate,
       site_con: siteConc,
-      montant_rec: mr,
+      montant_rec: parseFloat(mr),
       tax: tax,
     };
     let newFacts;
@@ -167,7 +167,7 @@ const AjoutFactureModal = ({
                           inputValue={factDesc}
                           handleChange={(e) => setFactDesc(e.target.value)}
                           rows={5}
-                          cols={61}
+                          cols={67}
                         />
                         <LabeledInput
                           id="factDate"

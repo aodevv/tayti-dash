@@ -1,13 +1,16 @@
 import React, { useMemo } from "react";
 import { useTable } from "react-table";
 
-import DATA from "./data.json";
-
 import { SalairesColumns } from "./Columns";
 
-const SalairesTab = ({ salaires, setIsEdit, setFactToEdit, setShowModal }) => {
+const SalairesTab = ({
+  salaires,
+  setIsEdit,
+  setSalairesToEdit,
+  setShowModal,
+}) => {
   const columns = useMemo(() => SalairesColumns, []);
-  const data = DATA;
+  const data = salaires;
   const tableInstance = useTable({
     columns,
     data,

@@ -1,6 +1,10 @@
 import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 
+import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
+import { selectDABFactures } from "../../redux/Factures/Factures.selectors";
+
+import { useNavigate, useParams } from "react-router-dom";
 import { useTable } from "react-table";
 
 import { DossierColumns } from "./Columns";
@@ -8,7 +12,14 @@ import { DossierColumns } from "./Columns";
 import DATA from "../../assets/DM_DATA.json";
 import "./DossierDetailsTable.scss";
 
-const DMTable = () => {
+const DMTable = ({ factures }) => {
+  const params = useParams();
+  const facturesTotal = factures[params.dossierId].reduce(
+    (acc, facture) => acc + facture.montant_rec,
+    0
+  );
+  DATA[0].mr = `$${facturesTotal}`;
+
   const columns = useMemo(() => DossierColumns, []);
   const data = useMemo(() => DATA, []);
 
@@ -51,4 +62,8 @@ const DMTable = () => {
   );
 };
 
-export default DMTable;
+const mapStateToProps = createStructuredSelector({
+  factures: selectDABFactures,
+});
+
+export default connect(mapStateToProps)(DMTable);

@@ -1,12 +1,23 @@
 import React, { useMemo } from "react";
+
+import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
+import { selectMPTFactures } from "../../redux/Factures/Factures.selectors";
+
 import { useTable } from "react-table";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { DossierColumns } from "./Columns";
 
 import DATA from "../../assets/MPT_DATA.json";
 
-const MPTTable = () => {
+const MPTTable = ({ factures }) => {
+  const params = useParams();
+  const facturesTotal = factures[params.dossierId].reduce(
+    (acc, facture) => acc + facture.montant_rec,
+    0
+  );
+  DATA[0].mr = `$${facturesTotal}`;
   const columns = useMemo(() => DossierColumns, []);
   const data = useMemo(() => DATA, []);
 
@@ -47,5 +58,8 @@ const MPTTable = () => {
     </table>
   );
 };
+const mapStateToProps = createStructuredSelector({
+  factures: selectMPTFactures,
+});
 
-export default MPTTable;
+export default connect(mapStateToProps)(MPTTable);

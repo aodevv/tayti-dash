@@ -7,7 +7,7 @@ export const FormGrid = styled.div`
 `;
 
 export const InputsGroup = styled.div`
-  width: 70rem;
+  width: 100%;
 `;
 
 export const InputsContainer = styled.div`
@@ -52,4 +52,11 @@ export const InfoCompGrid = styled.div`
   display: flex;
 `;
 
+export const SplitInputs = styled.div`
+  width: 100%;
+  display: flex;
+  div {
+    width: 50%;
+  }
+`;
 export const StepTables = styled.div``;
