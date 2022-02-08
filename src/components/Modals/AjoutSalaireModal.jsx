@@ -123,7 +123,7 @@ const AjoutSalaireModal = ({
                         <LabeledInput
                           id="mtRec"
                           type="number"
-                          label="Montant réclamé avant tax"
+                          label="Salaire réclamé"
                           inputValue={mtRec}
                           handleChange={(e) => setMtRec(e.target.value)}
                         />
@@ -140,7 +140,14 @@ const AjoutSalaireModal = ({
                             <LabeledInput
                               id="hSup"
                               type="number"
-                              label="Supplementaires"
+                              label="Supplementaires 1"
+                              inputValue={hSup}
+                              handleChange={(e) => setHSup(e.target.value)}
+                            />
+                            <LabeledInput
+                              id="hSup"
+                              type="number"
+                              label="Supplementaires 2"
                               inputValue={hSup}
                               handleChange={(e) => setHSup(e.target.value)}
                             />
@@ -159,7 +166,14 @@ const AjoutSalaireModal = ({
                             <LabeledInput
                               id="tSup"
                               type="number"
-                              label="Supplementaires"
+                              label="Supplementaires 1"
+                              inputValue={tSup}
+                              handleChange={(e) => setTSup(e.target.value)}
+                            />
+                            <LabeledInput
+                              id="tSup"
+                              type="number"
+                              label="Supplementaires 2"
                               inputValue={tSup}
                               handleChange={(e) => setTSup(e.target.value)}
                             />

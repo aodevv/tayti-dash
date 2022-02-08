@@ -6,7 +6,7 @@ import { createStructuredSelector } from "reselect";
 
 import { selectDossiers } from "../../redux/DossierInfos/infosDossier.selectors";
 
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import { COLUMNS } from "./ColumnsDossier";
 
 import "./TableDossier.scss";
@@ -19,10 +19,13 @@ const TableDossier = ({ dossiers }) => {
     history(`/dossier/${row.original.Numero}`);
   };
 
-  const tableInstance = useTable({
-    columns,
-    data,
-  });
+  const tableInstance = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
@@ -32,7 +35,16 @@ const TableDossier = ({ dossiers }) => {
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((columns) => (
-              <th {...columns.getHeaderProps()}>{columns.render("Header")}</th>
+              <th {...columns.getHeaderProps(columns.getSortByToggleProps())}>
+                {columns.render("Header")}
+                <span>
+                  {columns.isSorted
+                    ? columns.isSortedDesc
+                      ? " 🔻"
+                      : " 🔺"
+                    : ""}
+                </span>
+              </th>
             ))}
           </tr>
         ))}
