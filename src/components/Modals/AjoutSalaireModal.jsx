@@ -2,6 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 
 import { useSpring, animated } from "react-spring";
 
+import { connect } from "react-redux";
+
+import {
+  addSalairesDAB,
+  addSalairesMPT,
+  addSalairesMI,
+} from "../../redux/Salaires/salaires.actions";
+
 import {
   Background,
   AjoutModalContainer,
@@ -28,16 +36,20 @@ const AjoutSalaireModal = ({
   isEdit,
   setIsEdit,
   salaireToEdit,
+  setSalaires,
+  addSalairesDAB,
+  addSalairesMI,
+  addSalairesMPT,
 }) => {
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [datePer, setDatePer] = useState("");
-  const [mtRec, setMtRec] = useState("");
-  const [hReg, setHReg] = useState("");
-  const [hSup, setHSup] = useState("");
-  const [tReg, setTReg] = useState("");
-  const [tSup, setTSup] = useState("");
-  const [tauxVac, setTauxVac] = useState("");
+  const [mtRec, setMtRec] = useState(0);
+  const [hReg, setHReg] = useState(0);
+  const [hSup, setHSup] = useState(0);
+  const [tReg, setTReg] = useState(0);
+  const [tSup, setTSup] = useState(0);
+  const [tauxVac, setTauxVac] = useState(0);
   const [ae, setAe] = useState(false);
   const [rrq, setRrq] = useState(false);
   const [rqap, setRqap] = useState(false);
@@ -62,11 +74,11 @@ const AjoutSalaireModal = ({
     setStatus("");
     setDatePer("");
     setMtRec("");
-    setHReg("");
-    setHSup("");
-    setTReg("");
-    setTSup("");
-    setTauxVac("");
+    setHReg(0);
+    setHSup(0);
+    setTReg(0);
+    setTSup(0);
+    setTauxVac(0);
     setAe(false);
     setRrq(false);
     setRqap(false);
@@ -74,6 +86,50 @@ const AjoutSalaireModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const salaireObj = {
+      name: name,
+      status: status,
+      date_per: datePer,
+      montant_rec: parseFloat(mtRec),
+      Hreg: parseFloat(hReg),
+      Hsup: parseFloat(hSup),
+      Treg: parseFloat(tReg),
+      Tsup: parseFloat(tSup),
+      taux_vac: parseFloat(tauxVac),
+      ae: ae,
+      rrq: rrq,
+      rqap: rqap,
+    };
+    let newSalaires;
+    if (type !== "new") {
+      newSalaires = [...salaires[dossier], salaireObj];
+      Object.keys(salaires).map(function (key, index) {
+        if (key === dossier) {
+          salaires[key] = newSalaires;
+        }
+      });
+    } else {
+      newSalaires = [...salaires, salaireObj];
+    }
+
+    switch (type) {
+      case "dab":
+        console.log("hereee");
+        addSalairesDAB(salaires);
+        break;
+      case "mpt":
+        addSalairesMPT(salaires);
+        break;
+      case "mi":
+        addSalairesMI(salaires);
+        break;
+      case "new":
+        setSalaires(newSalaires);
+        break;
+      default:
+        break;
+    }
+    reset();
   };
 
   const reset = () => {
@@ -235,4 +291,10 @@ const AjoutSalaireModal = ({
   );
 };
 
-export default AjoutSalaireModal;
+const mapDispatchToProps = (dispatch) => ({
+  addSalairesDAB: (newFacts) => dispatch(addSalairesDAB(newFacts)),
+  addSalairesMPT: (newFacts) => dispatch(addSalairesMPT(newFacts)),
+  addSalairesMI: (newFacts) => dispatch(addSalairesMI(newFacts)),
+});
+
+export default connect(null, mapDispatchToProps)(AjoutSalaireModal);

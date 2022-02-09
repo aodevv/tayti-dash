@@ -43,7 +43,7 @@ const Salaires = ({ type, salaires }) => {
       />
       <SalairesTab
         setIsEdit={setIsEdit}
-        setFactToEdit={setSalaireToEdit}
+        setSalairesToEdit={setSalaireToEdit}
         salaires={salairesDossier}
         setShowModal={setShowModal}
       />

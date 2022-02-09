@@ -14,11 +14,13 @@ import "./DossierDetailsTable.scss";
 
 const DMTable = ({ factures }) => {
   const params = useParams();
-  const facturesTotal = factures[params.dossierId].reduce(
-    (acc, facture) => acc + facture.montant_rec,
-    0
-  );
-  DATA[0].mr = `$${facturesTotal}`;
+  if (factures[params.dossierId]) {
+    const facturesTotal = factures[params.dossierId].reduce(
+      (acc, facture) => acc + facture.montant_rec,
+      0
+    );
+    DATA[0].mr = `$${facturesTotal}`;
+  }
 
   const columns = useMemo(() => DossierColumns, []);
   const data = useMemo(() => DATA, []);

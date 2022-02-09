@@ -5,17 +5,19 @@ import storage from "redux-persist/lib/storage";
 import infosDossierReducer from "./DossierInfos/infoDossier.reducer";
 import facturesReducer from "./Factures/Factures.reducer";
 import salairesReducer from "./Salaires/salaires.reducer";
+import machineriesReducer from "./Machineries/machineries.reducer";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["factures", "dossiers"],
+  whitelist: [],
 };
 
 const rootReducer = combineReducers({
   dossiers: infosDossierReducer,
   factures: facturesReducer,
   salaires: salairesReducer,
+  machineries: machineriesReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

@@ -18,6 +18,17 @@ import {
 } from "../../redux/Factures/Factures.actions";
 
 import {
+  selectDABSalaires,
+  selectMISalaires,
+  selectMPTSalaires,
+} from "../../redux/Salaires/salaires.selectors";
+import {
+  addSalairesDAB,
+  addSalairesMPT,
+  addSalairesMI,
+} from "../../redux/Salaires/salaires.actions";
+
+import {
   Background,
   AjoutModalContainer,
   ModalCloseBtn,
@@ -38,6 +49,12 @@ const ModalContainer = ({
   addFactureMPT,
   MIFactures,
   addFactureMI,
+  DABSalaires,
+  addSalairesDAB,
+  MPTSalaires,
+  addSalairesMPT,
+  MISalaires,
+  addSalairesMI,
 }) => {
   const [step, setStep] = useState(1);
   const [values, setValues] = useState({
@@ -74,6 +91,9 @@ const ModalContainer = ({
       addFactureDAB({ ...DABFactures, [numDos]: values.dab.factures });
       addFactureMI({ ...MIFactures, [numDos]: values.mi.factures });
       addFactureMPT({ ...MPTFactures, [numDos]: values.mpt.factures });
+      addSalairesDAB({ ...DABSalaires, [numDos]: values.dab.salaires });
+      addSalairesMI({ ...MISalaires, [numDos]: values.mi.salaires });
+      addSalairesMPT({ ...MPTSalaires, [numDos]: values.mpt.salaires });
       handleClose();
     }
   };
@@ -128,6 +148,9 @@ const mapStateToProps = createStructuredSelector({
   DABFactures: selectDABFactures,
   MPTFactures: selectMPTFactures,
   MIFactures: selectMIFactures,
+  DABSalaires: selectDABSalaires,
+  MPTSalaires: selectMPTSalaires,
+  MISalaires: selectMISalaires,
   dossiers: selectDossiers,
 });
 
@@ -136,6 +159,9 @@ const mapDispatchToProps = (dispatch) => ({
   addFactureDAB: (newFacts) => dispatch(addFactureDAB(newFacts)),
   addFactureMPT: (newFacts) => dispatch(addFactureMPT(newFacts)),
   addFactureMI: (newFacts) => dispatch(addFactureMI(newFacts)),
+  addSalairesDAB: (newFacts) => dispatch(addSalairesDAB(newFacts)),
+  addSalairesMPT: (newFacts) => dispatch(addSalairesMPT(newFacts)),
+  addSalairesMI: (newFacts) => dispatch(addSalairesMI(newFacts)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalContainer);

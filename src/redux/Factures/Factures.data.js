@@ -82,6 +82,14 @@ export const facturesMPTData = {
       tax: true,
     },
   ],
+  3: [],
+  4: [],
+  5: [],
+  6: [],
+  7: [],
+  8: [],
+  9: [],
+  10: [],
 };
 
 export const facturesMIData = {
@@ -121,4 +129,12 @@ export const facturesMIData = {
       tax: true,
     },
   ],
+  3: [],
+  4: [],
+  5: [],
+  6: [],
+  7: [],
+  8: [],
+  9: [],
+  10: [],
 };
