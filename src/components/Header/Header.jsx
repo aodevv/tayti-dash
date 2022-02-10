@@ -12,12 +12,12 @@ import {
 } from "./Header.styles";
 import { Hamburger, Line } from "../Mix/Mix.styles";
 
-const Header = () => {
+const Header = ({ setLeft, left }) => {
   const [burger, setBurger] = useState(false);
   const toggleBurger = () => {
     setBurger(!burger);
-    console.log("clicked");
-    console.log(burger);
+    console.log(left);
+    setLeft(!left);
   };
   return (
     <HContainer>

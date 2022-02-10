@@ -5,7 +5,6 @@ import InfosDossierTest from "../FormSteps/InfosDossierTest";
 //import DMDossier from "../FormSteps/DMDossier";
 import DMStep from "../FormSteps/DMStep";
 //import MPTForm from "../FormSteps/MPTForm";
-import MPTStep from "../FormSteps/MPTStep";
 
 const CurrentStep = ({
   step,

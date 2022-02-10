@@ -73,7 +73,7 @@ const AjoutSalaireModal = ({
     setName("");
     setStatus("");
     setDatePer("");
-    setMtRec("");
+    setMtRec(0);
     setHReg(0);
     setHSup(0);
     setTReg(0);
@@ -90,7 +90,7 @@ const AjoutSalaireModal = ({
       name: name,
       status: status,
       date_per: datePer,
-      montant_rec: parseFloat(mtRec),
+      montant_rec: parseFloat(hReg * hSup + tReg * tSup),
       Hreg: parseFloat(hReg),
       Hsup: parseFloat(hSup),
       Treg: parseFloat(tReg),
@@ -175,13 +175,6 @@ const AjoutSalaireModal = ({
                           label="Date de la facture"
                           inputValue={datePer}
                           handleChange={(e) => setDatePer(e.target.value)}
-                        />
-                        <LabeledInput
-                          id="mtRec"
-                          type="number"
-                          label="Salaire réclamé"
-                          inputValue={mtRec}
-                          handleChange={(e) => setMtRec(e.target.value)}
                         />
                         <div>
                           <h2>Heures réclamées:</h2>

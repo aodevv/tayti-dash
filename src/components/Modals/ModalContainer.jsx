@@ -58,7 +58,20 @@ const ModalContainer = ({
 }) => {
   const [step, setStep] = useState(1);
   const [values, setValues] = useState({
-    infosDossier: null,
+    infosDossier: {
+      Numero: "",
+      Evenement: "",
+      datEv: "",
+      datOuv: "",
+      status: null,
+      Admisibilité: null,
+      MR: 0,
+      MA: 0,
+      MV: 0,
+      actOf: "",
+      prgm: "",
+      partFonc: "",
+    },
     dab: {
       factures: [],
       salaires: [],

@@ -18,51 +18,33 @@ import LabeledInput from "../FormElements/LabeledInput";
 import LabeledTextArea from "../FormElements/LabeledTextArea";
 import { StepBtn } from "../FormElements/Buttons";
 
-import { ButtonM } from "../Mix/Mix.styles";
-
-const InfosDossierTest = ({
-  nextStep,
-  dossiers,
-  addInfosDossier,
-  values,
-  setValues,
-}) => {
-  const [numDos, setNumDos] = useState("");
-  const [evDate, setEvDate] = useState("");
-  const [opDate, setOpDate] = useState("");
-  const [desc, setDesc] = useState("");
-  const [actof, setActOf] = useState("");
-  const [prog, setProg] = useState("");
-  const [partFonc, setPartFonc] = useState("");
-
-  const clearStates = () => {
-    setNumDos("");
-    setEvDate("");
-    setOpDate("");
-    setDesc("");
-    setActOf("");
-    setProg("");
-    setPartFonc("");
-  };
-
+const InfosDossierTest = ({ nextStep, values, setValues }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newDos = {
-      Numero: numDos,
-      Evenement: desc,
-      "Date d'evenement": evDate,
-      status: null,
-      Admisibilité: false,
-      MR: 0,
-      MA: 0,
-      MV: 0,
-      Participation: "",
-    };
+    // const newDos = {
+    //   Numero: numDos,
+    //   Evenement: desc,
+    //   "Date d'evenement": evDate,
+    //   status: null,
+    //   Admisibilité: false,
+    //   MR: 0,
+    //   MA: 0,
+    //   MV: 0,
+    //   Participation: "",
+    // };
     //addInfosDossier([...dossiers, newDos]);
     //clearStates();
     console.log("submited");
-    setValues({ ...values, infosDossier: newDos });
+    //setValues({ ...values, infosDossier: newDos });
     nextStep();
+  };
+
+  const changeInput = (e, chunk) => {
+    const infosDossier = values.infosDossier;
+    setValues({
+      ...values,
+      infosDossier: { ...infosDossier, [chunk]: e.target.value },
+    });
   };
 
   return (
@@ -79,22 +61,22 @@ const InfosDossierTest = ({
                     id="numdos"
                     type="text"
                     label="Numéro Dossier"
-                    inputValue={numDos}
-                    handleChange={(e) => setNumDos(e.target.value)}
+                    inputValue={values.infosDossier.Numero}
+                    handleChange={(e) => changeInput(e, "Numero")}
                   />
                   <LabeledInput
                     id="datev"
                     type="date"
                     label="Date évenement"
-                    inputValue={evDate}
-                    handleChange={(e) => setEvDate(e.target.value)}
+                    inputValue={values.infosDossier.datEv}
+                    handleChange={(e) => changeInput(e, "datEv")}
                   />
                   <LabeledInput
                     id="datouv"
                     type="date"
                     label="Date d'ouverture"
-                    inputValue={opDate}
-                    handleChange={(e) => setOpDate(e.target.value)}
+                    inputValue={values.infosDossier.datOuv}
+                    handleChange={(e) => changeInput(e, "datOuv")}
                   />
                 </InfoGrid>
               </InputsGroup>
@@ -105,8 +87,8 @@ const InfosDossierTest = ({
                 <LabeledTextArea
                   id="evn"
                   label="Déscription"
-                  inputValue={desc}
-                  handleChange={(e) => setDesc(e.target.value)}
+                  inputValue={values.infosDossier.Evenement}
+                  handleChange={(e) => changeInput(e, "Evenement")}
                   rows={5}
                   cols={50}
                 />
@@ -120,22 +102,22 @@ const InfosDossierTest = ({
                     id="actof"
                     type="text"
                     label="Acte officiel"
-                    inputValue={actof}
-                    handleChange={(e) => setActOf(e.target.value)}
+                    inputValue={values.infosDossier.actOf}
+                    handleChange={(e) => changeInput(e, "actOf")}
                   />
                   <LabeledInput
                     id="program"
                     type="text"
                     label="Programme"
-                    inputValue={prog}
-                    handleChange={(e) => setProg(e.target.value)}
+                    inputValue={values.infosDossier.prgm}
+                    handleChange={(e) => changeInput(e, "prgm")}
                   />
                   <LabeledInput
                     id="partfonc"
                     type="text"
                     label="Participation foncière"
-                    inputValue={partFonc}
-                    handleChange={(e) => setPartFonc(e.target.value)}
+                    inputValue={values.infosDossier.partFonc}
+                    handleChange={(e) => changeInput(e, "partFonc")}
                   />
                 </InfoCompGrid>
               </InputsGroup>

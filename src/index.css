@@ -24,6 +24,7 @@ body {
   --color-primary-white: rgba(255, 255, 255);
   --color-primary-white-light: rgba(255, 255, 255, 0.85);
   --color-primary-dark: #2a2a2a;
+  --color-primary-darker: #202020;
   --color-primary-grey: #444444;
   --color-primary-light-grey: rgba(117, 117, 117, 0.226);
 

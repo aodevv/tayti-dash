@@ -11,20 +11,23 @@ import DABPage from "../../pages/GestionDossier/DABPage";
 import MPTPage from "../../pages/GestionDossier/MPTPage";
 import MIPage from "../../pages/GestionDossier/MIPage";
 
+import Salaries from "../../pages/Salaries/Salaries";
+
 import Factures from "../Tables/Factures/Factures";
 import Machinerie from "../Tables/Machineries/Machinerie";
 import Salaires from "../Tables/Salaires/Salaires";
 
 import AjoutDossierForm from "../AjoutDossierForm/AjoutDossierForm";
 
-const RightContent = ({ match }) => {
+const RightContent = ({ match, left, setLeft }) => {
   return (
     <RightContainer>
-      <Header />
+      <Header left={left} setLeft={setLeft} />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/test" element={<AjoutDossierForm />} />
         <Route path="/gestion-dossier" element={<GestionDossier />} />
+        <Route path="/liste-salaries" element={<Salaries />} />
         <Route path="/ajout-dossier" element={<AjoutDossier />} />
         <Route path="/dossier/:dossierId" element={<DossierDetails />} />
         <Route path="/dossier/:dossierId/dab/" element={<DABPage />}>

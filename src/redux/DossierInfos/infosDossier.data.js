@@ -2,7 +2,7 @@ export const dossierData = [
   {
     Numero: "1",
     Evenement: "Revision of Nonaut Sub in L Low Femur, Open Approach",
-    "Date d'evenement": "1/11/2021",
+    datEv: "1/11/2021",
     status: null,
     Admisibilité: false,
     MR: "$63641.89",
@@ -13,7 +13,7 @@ export const dossierData = [
   {
     Numero: "2",
     Evenement: "Replacement of L Atrium with Nonaut Sub, Perc Endo Approach",
-    "Date d'evenement": "9/30/2021",
+    datEv: "9/30/2021",
     status: null,
     Admisibilité: true,
     MR: "$19289.11",
@@ -24,7 +24,7 @@ export const dossierData = [
   {
     Numero: "3",
     Evenement: "Repair Pelvis Lymphatic, Percutaneous Approach",
-    "Date d'evenement": "10/17/2021",
+    datEv: "10/17/2021",
     status: null,
     Admisibilité: true,
     MR: "$23683.18",
@@ -35,7 +35,7 @@ export const dossierData = [
   {
     Numero: "4",
     Evenement: "Restrict of L Parotid Duct with Intralum Dev, Perc Approach",
-    "Date d'evenement": "3/3/2021",
+    datEv: "3/3/2021",
     status: null,
     Admisibilité: false,
     MR: "$35006.69",
@@ -46,7 +46,7 @@ export const dossierData = [
   {
     Numero: "5",
     Evenement: "Dilate L Subclav Art, Bifurc, w 2 Drug-elut, Perc",
-    "Date d'evenement": "4/23/2021",
+    datEv: "4/23/2021",
     status: null,
     Admisibilité: true,
     MR: "$70194.14",
@@ -57,7 +57,7 @@ export const dossierData = [
   {
     Numero: "6",
     Evenement: "Occlusion of Descending Colon, Perc Endo Approach",
-    "Date d'evenement": "3/21/2021",
+    datEv: "3/21/2021",
     status: null,
     Admisibilité: true,
     MR: "$81643.75",
@@ -68,7 +68,7 @@ export const dossierData = [
   {
     Numero: "7",
     Evenement: "Extirpation of Matter from Pons, Open Approach",
-    "Date d'evenement": "7/7/2021",
+    datEv: "7/7/2021",
     status: null,
     Admisibilité: true,
     MR: "$86472.97",
@@ -79,7 +79,7 @@ export const dossierData = [
   {
     Numero: "8",
     Evenement: "Supplement Left Vocal Cord with Nonaut Sub, Endo",
-    "Date d'evenement": "8/28/2021",
+    datEv: "8/28/2021",
     status: null,
     Admisibilité: true,
     MR: "$92953.64",
@@ -90,7 +90,7 @@ export const dossierData = [
   {
     Numero: "9",
     Evenement: "High Dose Rate (HDR) Brachytherapy of Chest using Iodine 125",
-    "Date d'evenement": "9/28/2021",
+    datEv: "9/28/2021",
     status: null,
     Admisibilité: true,
     MR: "$70818.22",
@@ -101,7 +101,7 @@ export const dossierData = [
   {
     Numero: "10",
     Evenement: "Resection of Right Large Intestine, Endo",
-    "Date d'evenement": "10/3/2021",
+    datEv: "10/3/2021",
     status: null,
     Admisibilité: true,
     MR: "$83390.81",

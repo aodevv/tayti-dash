@@ -1,9 +1,11 @@
 import logo from "../../logo-generic.svg";
 import {
+  IoHomeSharp,
   IoFolderSharp,
   IoChevronForward,
   IoChatboxEllipses,
   IoEllipsisHorizontal,
+  IoLogoUsd,
 } from "react-icons/io5";
 import React from "react";
 
@@ -16,15 +18,26 @@ import {
 
 import { Link } from "react-router-dom";
 
-const LeftMenu = () => {
+const LeftMenu = ({ visible }) => {
   return (
     <div>
-      <LMContainer>
-        <LogoContainer>
+      <LMContainer width={visible ? "30rem" : "0rem"}>
+        {/* <LogoContainer>
           <img src={logo} alt="Logo" />
-        </LogoContainer>
+        </LogoContainer> */}
         <MenuOptions>
           <MenuOption>
+            <Link to="/">
+              <i>
+                <IoHomeSharp />
+              </i>
+              <span>Acceuil</span>
+              <i>
+                <IoChevronForward />
+              </i>
+            </Link>
+          </MenuOption>
+          <MenuOption active={true}>
             <Link to="/gestion-dossier">
               <i>
                 <IoFolderSharp />
@@ -36,7 +49,7 @@ const LeftMenu = () => {
             </Link>
           </MenuOption>
           <MenuOption>
-            <a href="javascript:void(0)">
+            <a href="#!">
               <i>
                 <IoChatboxEllipses />
               </i>
@@ -47,7 +60,18 @@ const LeftMenu = () => {
             </a>
           </MenuOption>
           <MenuOption>
-            <a href="javascript:void(0)">
+            <Link to="/liste-salaries">
+              <i>
+                <IoLogoUsd />
+              </i>
+              <span>Liste salariés</span>
+              <i>
+                <IoChevronForward />
+              </i>
+            </Link>
+          </MenuOption>
+          <MenuOption>
+            <a href="#!">
               <i>
                 <IoEllipsisHorizontal />
               </i>

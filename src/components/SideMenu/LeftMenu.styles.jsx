@@ -6,6 +6,8 @@ export const LMContainer = styled.div`
   width: 30rem;
   height: 100%;
   background-color: var(--color-primary-dark);
+  width: ${(props) => props.width};
+  transition: width 200ms linear;
 `;
 
 export const LogoContainer = styled.div`
@@ -25,13 +27,24 @@ export const MenuOptions = styled.ul`
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
-  padding-left: 1rem;
+  min-width: 30rem;
 `;
 
 export const MenuOption = styled.li`
   display: flex;
   flex-direction: column;
   list-style: none;
+  ${({ active }) =>
+    active &&
+    `
+    background-color: var(--color-primary-darker);
+    box-shadow: inset 0px -12px 16px -10px rgba(15,15,15,0.9),inset 0px 12px 16px -10px rgba(15,15,15,0.9);
+    a{
+
+      color: orange;
+    }
+    
+  `}
   a {
     color: var(--color-primary-white-light);
     font-size: 1.8rem;
