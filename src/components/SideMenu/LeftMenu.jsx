@@ -7,7 +7,7 @@ import {
   IoEllipsisHorizontal,
   IoLogoUsd,
 } from "react-icons/io5";
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   LMContainer,
@@ -18,7 +18,17 @@ import {
 
 import { Link } from "react-router-dom";
 
-const LeftMenu = ({ visible }) => {
+const LeftMenu = ({ visible, pathname }) => {
+  /* const history = createBrowserHistory();
+  let pathname = history.location.pathname;
+
+  useEffect(() => {
+    console.log(history);
+    return history.listen((location) => {
+      console.log(location.location.pathname);
+      console.log(pathname);
+    });
+  }, [history, pathname]); */
   return (
     <div>
       <LMContainer width={visible ? "30rem" : "0rem"}>
@@ -26,7 +36,7 @@ const LeftMenu = ({ visible }) => {
           <img src={logo} alt="Logo" />
         </LogoContainer> */}
         <MenuOptions>
-          <MenuOption>
+          <MenuOption active={pathname === "" ? true : false} visible={visible}>
             <Link to="/">
               <i>
                 <IoHomeSharp />
@@ -37,7 +47,12 @@ const LeftMenu = ({ visible }) => {
               </i>
             </Link>
           </MenuOption>
-          <MenuOption active={true}>
+          <MenuOption
+            active={
+              ["gestion-dossier", "dossier"].includes(pathname) ? true : false
+            }
+            visible={visible}
+          >
             <Link to="/gestion-dossier">
               <i>
                 <IoFolderSharp />
@@ -59,7 +74,10 @@ const LeftMenu = ({ visible }) => {
               </i>
             </a>
           </MenuOption>
-          <MenuOption>
+          <MenuOption
+            active={["liste-salaries"].includes(pathname) ? true : false}
+            visible={visible}
+          >
             <Link to="/liste-salaries">
               <i>
                 <IoLogoUsd />

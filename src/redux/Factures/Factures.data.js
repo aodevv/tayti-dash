@@ -3,7 +3,7 @@ export const facturesDABData = {
     {
       id: "11",
       desc_fact: "Facture 1",
-      date_fact: "1/11/2021",
+      date_fact: "2021-01-11",
       site_con: "Casablanca",
       montant_rec: 2460,
       tax: false,
@@ -11,7 +11,7 @@ export const facturesDABData = {
     {
       id: "12",
       desc_fact: "Facture 2",
-      date_fact: "9/30/2021",
+      date_fact: "2021-09-30",
       site_con: "Rabat",
       montant_rec: 1220,
       tax: true,
@@ -21,7 +21,7 @@ export const facturesDABData = {
     {
       id: "21",
       desc_fact: "Facture 1",
-      date_fact: "1/11/2021",
+      date_fact: "2021-01-11",
       site_con: "Casablanca",
       montant_rec: 123456,
       tax: false,
@@ -29,7 +29,7 @@ export const facturesDABData = {
     {
       id: "22",
       desc_fact: "Facture 2",
-      date_fact: "9/30/2021",
+      date_fact: "2021-09-30",
       site_con: "Rabat",
       montant_rec: 99999,
       tax: true,
@@ -50,7 +50,7 @@ export const facturesMPTData = {
     {
       id: "11",
       desc_fact: "Factureeeeeeee 1",
-      date_fact: "1/11/2021",
+      date_fact: "2021-01-11",
       site_con: "Casablanca",
       montant_rec: 10547,
       tax: false,
@@ -58,7 +58,7 @@ export const facturesMPTData = {
     {
       id: "12",
       desc_fact: "Facture 2",
-      date_fact: "9/30/2021",
+      date_fact: "2021-09-30",
       site_con: "Rabat",
       montant_rec: 8963.36,
       tax: true,
@@ -68,7 +68,7 @@ export const facturesMPTData = {
     {
       id: "21",
       desc_fact: "Facture 1",
-      date_fact: "1/11/2021",
+      date_fact: "2021-01-11",
       site_con: "Casablanca",
       montant_rec: 3469.2,
       tax: false,
@@ -76,7 +76,7 @@ export const facturesMPTData = {
     {
       id: "22",
       desc_fact: "Facture 2",
-      date_fact: "9/30/2021",
+      date_fact: "2021-09-30",
       site_con: "Rabat",
       montant_rec: 1244,
       tax: true,
@@ -97,7 +97,7 @@ export const facturesMIData = {
     {
       id: "11",
       desc_fact: "Facture MI 1",
-      date_fact: "1/11/2021",
+      date_fact: "2021-01-11",
       site_con: "Casablanca",
       montant_rec: 3655.54,
       tax: false,
@@ -105,7 +105,7 @@ export const facturesMIData = {
     {
       id: "12",
       desc_fact: "Facture MI 2",
-      date_fact: "9/30/2021",
+      date_fact: "2021-09-30",
       site_con: "Rabat",
       montant_rec: 2978.3,
       tax: true,
@@ -115,7 +115,7 @@ export const facturesMIData = {
     {
       id: "21",
       desc_fact: "Facture MI 1",
-      date_fact: "1/11/2021",
+      date_fact: "2021-01-11",
       site_con: "Casablanca",
       montant_rec: 123456,
       tax: false,
@@ -123,7 +123,7 @@ export const facturesMIData = {
     {
       id: "22",
       desc_fact: "Facture MI 2",
-      date_fact: "9/30/2021",
+      date_fact: "2021-09-30",
       site_con: "Rabat",
       montant_rec: 99999,
       tax: true,

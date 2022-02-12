@@ -61,9 +61,12 @@ const AjoutFactureModal = ({
       const { id, desc_fact, date_fact, site_con, montant_rec } = factToEdit;
       setFactRef(id);
       setFactDesc(desc_fact);
-      const [mm, dd, yyyy] = date_fact.split("/");
-      setFactDate(`${yyyy}-${mm}-${dd}`);
-      console.log(`${yyyy}-${mm}-${dd}`);
+      console.log(date_fact);
+      //let [mm, dd, yyyy] = date_fact.split("/");
+      //dd = dd.length === 1 ? "0" + dd : dd;
+      //mm = mm.length === 1 ? "0" + mm : mm;
+      setFactDate(date_fact);
+      //console.log(`${yyyy}-${mm}-${dd}`);
       setSiteConc(site_con);
       setMr(montant_rec);
       setTax(factToEdit.tax);

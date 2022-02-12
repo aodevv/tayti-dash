@@ -90,7 +90,7 @@ const AjoutSalaireModal = ({
       name: name,
       status: status,
       date_per: datePer,
-      montant_rec: parseFloat(hReg * hSup + tReg * tSup),
+      montant_rec: parseFloat(hReg * tReg + hSup * tSup),
       Hreg: parseFloat(hReg),
       Hsup: parseFloat(hSup),
       Treg: parseFloat(tReg),

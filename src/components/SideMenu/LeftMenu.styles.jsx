@@ -34,15 +34,12 @@ export const MenuOption = styled.li`
   display: flex;
   flex-direction: column;
   list-style: none;
-  ${({ active }) =>
+  ${({ active, visible }) =>
     active &&
+    visible &&
     `
     background-color: var(--color-primary-darker);
     box-shadow: inset 0px -12px 16px -10px rgba(15,15,15,0.9),inset 0px 12px 16px -10px rgba(15,15,15,0.9);
-    a{
-
-      color: orange;
-    }
     
   `}
   a {

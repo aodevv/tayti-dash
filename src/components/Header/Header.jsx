@@ -13,10 +13,9 @@ import {
 import { Hamburger, Line } from "../Mix/Mix.styles";
 
 const Header = ({ setLeft, left }) => {
-  const [burger, setBurger] = useState(false);
+  const [burger, setBurger] = useState(true);
   const toggleBurger = () => {
-    setBurger(!burger);
-    console.log(left);
+    setBurger(!left);
     setLeft(!left);
   };
   return (

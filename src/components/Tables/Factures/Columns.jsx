@@ -1,3 +1,5 @@
+import { IoCheckmarkSharp } from "react-icons/io5";
+
 export const FacturesColumns = [
   {
     Header: "Ref. facture",
@@ -20,7 +22,10 @@ export const FacturesColumns = [
     accessor: "montant_rec",
   },
   {
+    id: "tax",
     Header: "Taxable",
-    accessor: "tax",
+    accessor: (d) => {
+      return d.tax ? <IoCheckmarkSharp /> : null;
+    },
   },
 ];

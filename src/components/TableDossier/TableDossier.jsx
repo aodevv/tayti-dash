@@ -10,6 +10,7 @@ import { useTable, useSortBy } from "react-table";
 import { COLUMNS } from "./ColumnsDossier";
 
 import "./TableDossier.scss";
+//import "react-table-6/react-table.css";
 
 const TableDossier = ({ dossiers }) => {
   const columns = useMemo(() => COLUMNS, []);

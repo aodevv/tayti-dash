@@ -22,18 +22,18 @@ export const Hamburger = styled.div`
     span{
       &:first-child{
         position:absolute;
-        right:-0.1rem;
+        left:-0.1rem;
         top: -0.6rem;
         width:1.5rem;
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
 
       }
       &:last-child{
         position:absolute;
-        right:-0.1rem;
+        left:-0.1rem;
         top:0.6rem;
         width:1.5rem;
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
       }
     }
 

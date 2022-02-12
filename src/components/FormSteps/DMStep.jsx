@@ -31,7 +31,7 @@ const DMStep = ({ prevStep, nextStep, values, setValues, stepName }) => {
       [stepName]: {
         factures: factures,
         salaires: salaires,
-        machineries: [],
+        machineries: machineries,
       },
     });
 

@@ -3,7 +3,7 @@ export const salairesDABData = {
     {
       name: "Said",
       status: "status 11",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 2460,
       Hreg: 12,
       Hsup: 20,
@@ -17,7 +17,7 @@ export const salairesDABData = {
     {
       name: "Karim",
       status: "status 12",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 9830,
       Hreg: 86,
       Hsup: 41,
@@ -26,14 +26,14 @@ export const salairesDABData = {
       taux_vac: 0.25,
       ae: true,
       rrq: true,
-      rqap: true,
+      rqap: false,
     },
   ],
   2: [
     {
       name: "Said 2",
       status: "status 21",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 2460,
       Hreg: 12,
       Hsup: 20,
@@ -47,7 +47,7 @@ export const salairesDABData = {
     {
       name: "Karim 2",
       status: "status 22",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 9830,
       Hreg: 86,
       Hsup: 41,
@@ -74,7 +74,7 @@ export const salairesMPTData = {
     {
       name: "Mstapha",
       status: "status 11",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 9914,
       Hreg: 12,
       Hsup: 20,
@@ -88,7 +88,7 @@ export const salairesMPTData = {
     {
       name: "3li",
       status: "status 12",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 1120,
       Hreg: 86,
       Hsup: 41,
@@ -104,7 +104,7 @@ export const salairesMPTData = {
     {
       name: "John Doe",
       status: "status 21",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 25630,
       Hreg: 12,
       Hsup: 20,
@@ -118,7 +118,7 @@ export const salairesMPTData = {
     {
       name: "Hans Landa",
       status: "status 22",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 78346.22,
       Hreg: 86,
       Hsup: 41,
@@ -145,7 +145,7 @@ export const salairesMIData = {
     {
       name: "Muller",
       status: "status 11",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 7630,
       Hreg: 12,
       Hsup: 20,
@@ -159,7 +159,7 @@ export const salairesMIData = {
     {
       name: "Thomas",
       status: "status 12",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 2130,
       Hreg: 86,
       Hsup: 41,
@@ -175,7 +175,7 @@ export const salairesMIData = {
     {
       name: "Schmickel",
       status: "status 21",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 2460,
       Hreg: 12,
       Hsup: 20,
@@ -189,7 +189,7 @@ export const salairesMIData = {
     {
       name: "Shrek",
       status: "status 22",
-      date_per: "1/11/2021",
+      date_per: "2021-01-11",
       montant_rec: 9830,
       Hreg: 86,
       Hsup: 41,

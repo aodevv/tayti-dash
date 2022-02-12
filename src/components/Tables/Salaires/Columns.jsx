@@ -1,3 +1,5 @@
+import { IoCheckmarkSharp } from "react-icons/io5";
+
 export const SalairesColumns = [
   {
     Header: "Nom de la personne",
@@ -46,15 +48,24 @@ export const SalairesColumns = [
     accessor: "taux_vac",
   },
   {
+    id: "ae",
     Header: "A.E",
-    accessor: "ae",
+    accessor: (d) => {
+      return d.ae ? <IoCheckmarkSharp /> : null;
+    },
   },
   {
+    id: "rrq",
     Header: "R.R.Q",
-    accessor: "rrq",
+    accessor: (d) => {
+      return d.rrq ? <IoCheckmarkSharp /> : null;
+    },
   },
   {
+    id: "rqap",
     Header: "R.Q.A.P",
-    accessor: "rqap",
+    accessor: (d) => {
+      return d.rqap ? <IoCheckmarkSharp /> : null;
+    },
   },
 ];
