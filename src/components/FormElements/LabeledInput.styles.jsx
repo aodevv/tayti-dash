@@ -64,3 +64,27 @@ export const TextAreaGroup = styled.div`
     ${sharedInputStyle}
   }
 `;
+
+export const SelectContainer = styled.div`
+  ${sharedCss}
+  select {
+    border: 0 none;
+    background: transparent;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    background-color: transparent;
+    font-size: 1.8rem;
+
+    option {
+      color: inherit;
+      border: 10px solid red;
+      border-radius: 1rem;
+    }
+  }
+
+  label {
+    ${topLabel}
+  }
+`;

@@ -14,7 +14,7 @@ export const FacturesColumns = [
     accessor: "date_fact",
   },
   {
-    Header: "Site concernés",
+    Header: "Site concerné",
     accessor: "site_con",
   },
   {

@@ -26,6 +26,8 @@ const DMStep = ({ prevStep, nextStep, values, setValues, stepName }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isFactEdit) {
+    }
     setValues({
       ...values,
       [stepName]: {
@@ -63,6 +65,7 @@ const DMStep = ({ prevStep, nextStep, values, setValues, stepName }) => {
         </StepBtn>
         <FacturesTab
           factures={factures}
+          setIsEdit={setIsFactEdit}
           setShowModal={setShowFactModal}
           setFactToEdit={setFactToEdit}
         />

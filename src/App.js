@@ -1,8 +1,8 @@
 import "./App.css";
 import { GlobalStyles } from "./GlobalStyles";
 import React, { useState } from "react";
-
 import { useLocation } from "react-router-dom";
+//import "rsuite/dist/rsuite.min.css";
 
 import LeftMenu from "./components/SideMenu/LeftMenu";
 import RightContent from "./components/RightContent/RightContent";

@@ -2,7 +2,10 @@ import React, { useMemo } from "react";
 
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
+
 import { selectDABFactures } from "../../redux/Factures/Factures.selectors";
+import { selectDABSalaires } from "../../redux/Salaires/salaires.selectors";
+import { selectDABMachineries } from "../../redux/Machineries/machineries.selectors";
 
 import { useNavigate, useParams } from "react-router-dom";
 import { useTable } from "react-table";
@@ -12,7 +15,7 @@ import { DossierColumns } from "./Columns";
 import DATA from "../../assets/DM_DATA.json";
 import "./DossierDetailsTable.scss";
 
-const DMTable = ({ factures }) => {
+const DMTable = ({ factures, salaires, machineries }) => {
   const params = useParams();
   if (factures[params.dossierId]) {
     const facturesTotal = factures[params.dossierId].reduce(
@@ -20,6 +23,22 @@ const DMTable = ({ factures }) => {
       0
     );
     DATA[0].mr = `$${facturesTotal}`;
+  }
+
+  if (salaires[params.dossierId]) {
+    const salairesTotal = salaires[params.dossierId].reduce(
+      (acc, salaire) => acc + salaire.montant_rec,
+      0
+    );
+    DATA[2].mr = `$${salairesTotal}`;
+  }
+
+  if (machineries[params.dossierId]) {
+    const machineriesTotal = machineries[params.dossierId].reduce(
+      (acc, machinerie) => acc + machinerie.cout,
+      0
+    );
+    DATA[1].mr = `$${machineriesTotal}`;
   }
 
   const columns = useMemo(() => DossierColumns, []);
@@ -66,6 +85,8 @@ const DMTable = ({ factures }) => {
 
 const mapStateToProps = createStructuredSelector({
   factures: selectDABFactures,
+  salaires: selectDABSalaires,
+  machineries: selectDABMachineries,
 });
 
 export default connect(mapStateToProps)(DMTable);

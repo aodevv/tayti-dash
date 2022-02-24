@@ -115,7 +115,7 @@ const InfosDossier = ({ nextStep, handleChange, values }) => {
                 <LabeledInput
                   id="partfonc"
                   type="text"
-                  label="Participation foncière"
+                  label="Participation financière"
                   inputValue={values.partfonc}
                   handleChange={handleChange("partfonc")}
                 />

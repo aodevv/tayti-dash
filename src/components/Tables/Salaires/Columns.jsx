@@ -68,4 +68,18 @@ export const SalairesColumns = [
       return d.rqap ? <IoCheckmarkSharp /> : null;
     },
   },
+  {
+    id: "fss",
+    Header: "F.S.S",
+    accessor: (d) => {
+      return d.fss ? <IoCheckmarkSharp /> : null;
+    },
+  },
+  {
+    id: "csst",
+    Header: "C.S.S.T",
+    accessor: (d) => {
+      return d.csst ? <IoCheckmarkSharp /> : null;
+    },
+  },
 ];

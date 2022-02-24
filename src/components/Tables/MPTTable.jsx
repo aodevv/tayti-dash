@@ -3,6 +3,8 @@ import React, { useMemo } from "react";
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import { selectMPTFactures } from "../../redux/Factures/Factures.selectors";
+import { selectMPTSalaires } from "../../redux/Salaires/salaires.selectors";
+import { selectMPTMachineries } from "../../redux/Machineries/machineries.selectors";
 
 import { useTable } from "react-table";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,7 +13,7 @@ import { DossierColumns } from "./Columns";
 
 import DATA from "../../assets/MPT_DATA.json";
 
-const MPTTable = ({ factures }) => {
+const MPTTable = ({ factures, salaires, machineries }) => {
   const params = useParams();
 
   if (factures[params.dossierId]) {
@@ -20,6 +22,22 @@ const MPTTable = ({ factures }) => {
       0
     );
     DATA[0].mr = `$${facturesTotal}`;
+  }
+
+  if (salaires[params.dossierId]) {
+    const salairesTotal = salaires[params.dossierId].reduce(
+      (acc, salaire) => acc + salaire.montant_rec,
+      0
+    );
+    DATA[2].mr = `$${salairesTotal}`;
+  }
+
+  if (machineries[params.dossierId]) {
+    const machineriesTotal = machineries[params.dossierId].reduce(
+      (acc, machinerie) => acc + machinerie.cout,
+      0
+    );
+    DATA[1].mr = `$${machineriesTotal}`;
   }
 
   const columns = useMemo(() => DossierColumns, []);
@@ -64,6 +82,8 @@ const MPTTable = ({ factures }) => {
 };
 const mapStateToProps = createStructuredSelector({
   factures: selectMPTFactures,
+  salaires: selectMPTSalaires,
+  machineries: selectMPTMachineries,
 });
 
 export default connect(mapStateToProps)(MPTTable);

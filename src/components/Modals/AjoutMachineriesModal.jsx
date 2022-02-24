@@ -43,10 +43,12 @@ const AjoutMachineriesModal = ({
 }) => {
   const [code, setCode] = useState("");
   const [desc, setDesc] = useState("");
-  const [care, setCare] = useState("");
+  const [maintenance, setMaintenance] = useState("");
+  const [tauxFonc, setTauxFonc] = useState("");
   const [siteConc, setSiteConc] = useState("");
   const [hrsFonc, setHrsFonc] = useState(0);
   const [hrsStat, setHrsStat] = useState(0);
+  const [cout, setCout] = useState(0);
 
   const modalRef = useRef();
   const animation = useSpring({
@@ -66,10 +68,11 @@ const AjoutMachineriesModal = ({
   const clearStates = () => {
     setCode("");
     setDesc("");
-    setCare("");
+    setMaintenance("");
     setSiteConc("");
     setHrsFonc(0);
     setHrsStat(0);
+    setCout(0);
   };
 
   const handleSubmit = (e) => {
@@ -77,10 +80,12 @@ const AjoutMachineriesModal = ({
     const machineObj = {
       code: code,
       desc: desc,
-      care: care,
+      maintenance: maintenance,
+      taux_fonc: tauxFonc,
       site_conc: siteConc,
-      hrs_fonc: parseFloat(hrsFonc),
-      hrs_stat: parseFloat(hrsStat),
+      hrs_fonc: hrsFonc,
+      hrs_stat: hrsStat,
+      cout: (maintenance + tauxFonc) * hrsFonc,
     };
     let newMachines;
     if (type !== "new") {
@@ -151,19 +156,31 @@ const AjoutMachineriesModal = ({
                           inputValue={desc}
                           handleChange={(e) => setDesc(e.target.value)}
                         />
-                        <LabeledInput
-                          id="care"
-                          type="text"
-                          label="Care"
-                          inputValue={care}
-                          handleChange={(e) => setCare(e.target.value)}
-                        />
+
                         <LabeledInput
                           id="siteConc"
                           type="text"
                           label="Site concérné"
                           inputValue={siteConc}
                           handleChange={(e) => setSiteConc(e.target.value)}
+                        />
+                        <LabeledInput
+                          id="maintenance"
+                          type="number"
+                          label="Maintenance"
+                          inputValue={maintenance}
+                          handleChange={(e) =>
+                            setMaintenance(parseFloat(e.target.value))
+                          }
+                        />
+                        <LabeledInput
+                          id="tauxFonc"
+                          type="number"
+                          label="Taux de fonctionnement par heure"
+                          inputValue={tauxFonc}
+                          handleChange={(e) =>
+                            setTauxFonc(parseFloat(e.target.value))
+                          }
                         />
                         <div>
                           <h2>Heures de service</h2>
@@ -173,17 +190,28 @@ const AjoutMachineriesModal = ({
                               type="number"
                               label="En fonction"
                               inputValue={hrsFonc}
-                              handleChange={(e) => setHrsFonc(e.target.value)}
+                              handleChange={(e) =>
+                                setHrsFonc(parseFloat(e.target.value))
+                              }
                             />
                             <LabeledInput
                               id="hrsStat"
                               type="number"
                               label="Stationaire"
                               inputValue={hrsStat}
-                              handleChange={(e) => setHrsStat(e.target.value)}
+                              handleChange={(e) =>
+                                setHrsStat(parseFloat(e.target.value))
+                              }
                             />
                           </SplitInputs>
                         </div>
+                        <LabeledInput
+                          id="cout"
+                          type="number"
+                          label="Côut"
+                          inputValue={(maintenance + tauxFonc) * hrsFonc}
+                          disabled
+                        />
                       </InputsGroup>
                     </InputsContainer>
                     <ButtonM type="submit">

@@ -57,7 +57,7 @@ const AjoutFactureModal = ({
   useEffect(() => {
     // Update the document title using the browser API
     if (isEdit) {
-      console.log(factToEdit);
+      //console.log(factToEdit);
       const { id, desc_fact, date_fact, site_con, montant_rec } = factToEdit;
       setFactRef(id);
       setFactDesc(desc_fact);
@@ -98,14 +98,33 @@ const AjoutFactureModal = ({
       montant_rec: parseFloat(mr),
       tax: tax,
     };
-    let newFacts;
+    let newFacts, newFact;
     if (type !== "new") {
-      newFacts = [...factures[dossier], factToAdd];
-      Object.keys(factures).map(function (key, index) {
-        if (key === dossier) {
-          factures[key] = newFacts;
-        }
-      });
+      if (!isEdit) {
+        newFacts = [...factures[dossier], factToAdd];
+        Object.keys(factures).map(function (key, index) {
+          if (key === dossier) {
+            factures[key] = newFacts;
+          }
+        });
+      } else {
+        // newFact = factures[dossier][];
+        newFacts = factures[dossier];
+        newFacts.forEach((fact) => {
+          if (fact.id === factRef) {
+            fact.desc_fact = factDesc;
+            fact.date_fact = factDate;
+            fact.site_con = siteConc;
+            fact.montant_rec = parseFloat(mr);
+            fact.tax = tax;
+          }
+        });
+        Object.keys(factures).map(function (key, index) {
+          if (key === dossier) {
+            factures[key] = newFacts;
+          }
+        });
+      }
     } else {
       newFacts = [...factures, factToAdd];
       console.log(newFacts);
@@ -113,7 +132,6 @@ const AjoutFactureModal = ({
 
     switch (type) {
       case "dab":
-        console.log("hereee");
         addFactureDAB(factures);
         break;
       case "mpt":

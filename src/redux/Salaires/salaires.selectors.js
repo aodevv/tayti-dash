@@ -16,3 +16,8 @@ export const selectMISalaires = createSelector(
   [selectSalaires],
   (salaires) => salaires.MI
 );
+
+export const selectPayroll = createSelector(
+  [selectSalaires],
+  (salaires) => salaires.Payroll
+);

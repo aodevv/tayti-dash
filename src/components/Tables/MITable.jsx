@@ -3,6 +3,8 @@ import React, { useMemo } from "react";
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import { selectMIFactures } from "../../redux/Factures/Factures.selectors";
+import { selectMISalaires } from "../../redux/Salaires/salaires.selectors";
+import { selectMIMachineries } from "../../redux/Machineries/machineries.selectors";
 
 import { useTable } from "react-table";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,7 +13,7 @@ import { DossierColumns } from "./Columns";
 
 import DATA from "../../assets/MI_DATA.json";
 
-const MITable = ({ factures }) => {
+const MITable = ({ factures, salaires, machineries }) => {
   const params = useParams();
 
   if (factures[params.dossierId]) {
@@ -20,6 +22,21 @@ const MITable = ({ factures }) => {
       0
     );
     DATA[0].mr = `$${facturesTotal}`;
+  }
+  if (salaires[params.dossierId]) {
+    const salairesTotal = salaires[params.dossierId].reduce(
+      (acc, salaire) => acc + salaire.montant_rec,
+      0
+    );
+    DATA[2].mr = `$${salairesTotal}`;
+  }
+
+  if (machineries[params.dossierId]) {
+    const machineriesTotal = machineries[params.dossierId].reduce(
+      (acc, machinerie) => acc + machinerie.cout,
+      0
+    );
+    DATA[1].mr = `$${machineriesTotal}`;
   }
 
   const columns = useMemo(() => DossierColumns, []);
@@ -65,6 +82,8 @@ const MITable = ({ factures }) => {
 
 const mapStateToProps = createStructuredSelector({
   factures: selectMIFactures,
+  salaires: selectMISalaires,
+  machineries: selectMIMachineries,
 });
 
 export default connect(mapStateToProps)(MITable);

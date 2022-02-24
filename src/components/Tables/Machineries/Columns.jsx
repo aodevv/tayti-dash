@@ -8,10 +8,6 @@ export const MachineriesColumns = [
     accessor: "desc",
   },
   {
-    Header: "Care",
-    accessor: "care",
-  },
-  {
     Header: "site",
     accessor: "site_conc",
   },
@@ -22,5 +18,18 @@ export const MachineriesColumns = [
   {
     Header: "Heures stationaires",
     accessor: "hrs_stat",
+  },
+  {
+    Header: "Taux de maintenance (Hrs)",
+    accessor: "maintenance",
+  },
+  {
+    Header: "Taux de fonctionnement par heures",
+    accessor: "taux_fonc",
+  },
+
+  {
+    Header: "Côut",
+    accessor: "cout",
   },
 ];
