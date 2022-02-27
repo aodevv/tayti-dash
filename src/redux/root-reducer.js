@@ -6,6 +6,7 @@ import infosDossierReducer from "./DossierInfos/infoDossier.reducer";
 import facturesReducer from "./Factures/Factures.reducer";
 import salairesReducer from "./Salaires/salaires.reducer";
 import machineriesReducer from "./Machineries/machineries.reducer";
+import DABReducer from "./DAB/DAB.reducer";
 
 const persistConfig = {
   key: "root",
@@ -15,6 +16,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   dossiers: infosDossierReducer,
+  dabs: DABReducer,
   factures: facturesReducer,
   salaires: salairesReducer,
   machineries: machineriesReducer,

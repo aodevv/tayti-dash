@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import DMTable from "../../components/Tables/DMTable";
 import MITable from "../../components/Tables/MITable";
@@ -12,7 +12,9 @@ const DossierDetails = () => {
   return (
     <div className="dossier-details__container">
       <h1>Dossier {params.dossierId}</h1>
-      <h2>Dommage au biens</h2>
+      <h2>
+        <Link to={`/dossier/${params.dossierId}/dab`}>Dommage au biens</Link>
+      </h2>
       <DMTable />
       <h2>Mesures d'interventions</h2>
       <MITable />

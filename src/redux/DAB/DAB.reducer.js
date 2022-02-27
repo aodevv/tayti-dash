@@ -1,15 +1,15 @@
-import { facturesData } from "./DAB.data";
+import { dabsData } from "./DAB.data";
 
 const INITIAL_STATE = {
-  factures: facturesData,
+  dabs: dabsData,
 };
 
 const DABReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "ADD_FACTURE":
+    case "ADD_DAB":
       return {
         ...state,
-        factures: action.payload,
+        dabs: action.payload,
       };
     default:
       return state;

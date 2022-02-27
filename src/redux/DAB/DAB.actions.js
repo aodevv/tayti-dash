@@ -1,4 +1,4 @@
-export const addFacture = (item) => ({
-  type: "ADD_FACTURE",
+export const addDab = (item) => ({
+  type: "ADD_DAB",
   payload: item,
 });
